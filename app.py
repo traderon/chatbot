@@ -4,13 +4,15 @@ import openai
 import os
 from dotenv import load_dotenv
 from docx import Document
+from flask import session
+
 
 
 load_dotenv()
 
 app = Flask(__name__, static_folder='./build')
 CORS(app)
-
+app.secret_key = os.environ.get("SECRET_KEY")
 #client = openai(api_key=os.getenv("OPENAI_API_KEY"))
 
 @app.route('/', defaults={'path': ''})
@@ -20,9 +22,19 @@ def index(path):
     global preguntas
     global contexto
     global pregunta
-    pregunta=""
-    contexto={}
-    preguntas=['Cual/es el/los periodo/s a evaluar','Coloque el nivel obtenido por el estudiante: S(superior), A(Alto), B(Básico), Ba(Bajo)','Cuáles son las barreras actitudinales de la familia','Cuáles son las barreras actitudinales del docente','Cuáles son las barreras curriculares']
+    #pregunta=""
+    #contexto={}
+    #preguntas=['Cual/es el/los periodo/s a evaluar','Coloque el nivel obtenido por el estudiante: S(superior), A(Alto), B(Básico), Ba(Bajo)','Cuáles son las barreras actitudinales de la familia','Cuáles son las barreras actitudinales del docente','Cuáles son las barreras curriculares']
+    session["preguntas"] = [
+        "Cual/es el/los periodo/s a evaluar",
+        "Coloque el nivel obtenido...",
+        "Cuáles son las barreras actitudinales de la familia",
+        "Cuáles son las barreras actitudinales del docente",
+        "Cuáles son las barreras curriculares"
+    ]
+    
+    session["contexto"] = {}
+    session["pregunta"] = ""
     if path != "" and os.path.exists(app.static_folder + '/' + path):
         return send_from_directory(app.static_folder, path)
     else:
@@ -34,9 +46,12 @@ def chat():
     data = request.json
     message = data.get("message")
     messages=[]
-    global contexto
-    global preguntas
-    global pregunta
+    #global contexto
+    #global preguntas
+    #global pregunta
+    preguntas = session.get("preguntas", [])
+    contexto = session.get("contexto", {})
+    pregunta = session.get("pregunta", "")
     print(preguntas)
     messages.append({"role": "system", "content": "Eres un asistente educativo experto en ajustes razonables en matemáticas."})
     
