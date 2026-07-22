@@ -1,0 +1,20 @@
+# Variables de entorno
+.env
+.env.*
+
+# Entorno virtual
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Archivos generados
+reporte.docx
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
