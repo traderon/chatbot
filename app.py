@@ -5,7 +5,8 @@ import os
 from dotenv import load_dotenv
 from docx import Document
 from flask import session
-
+from flask import send_file
+from io import BytesIO
 
 
 load_dotenv()
@@ -126,10 +127,20 @@ def chat():
         Reconoce y compara cantidades simples (mitad, entero, vacío, lleno) usando material concreto y apoyos visuales, sin necesidad de lenguaje estructurado. Identifica cuándo una cantidad es “una parte” o “todas las partes” en diferentes situaciones manipulativas.
         """
         
-        documento.save('reporte.docx')
-        return jsonify({
-        "response": "Gracias por tus respuestas"
-         })
+        #documento.save('reporte.docx')
+        #return jsonify({
+        #"response": "Gracias por tus respuestas"
+        # })
+        buffer = BytesIO()
+        documento.save(buffer)
+        buffer.seek(0)
+        
+        return send_file(
+            buffer,
+            as_attachment=True,
+            download_name="reporte.docx",
+            mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        )
          
     messages.append({
     "role": "user",
