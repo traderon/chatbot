@@ -34,6 +34,7 @@ def index(path):
         "Cuáles son las barreras actitudinales del docente",
         "Cuáles son las barreras curriculares"
     ]
+    session["messages"]=[]
     session.modified = True
     
     print("SESSION:", dict(session))
@@ -52,7 +53,6 @@ def chat():
     openai.api_key = os.environ.get("OPENAI_SECRET_KEY")
     data = request.json
     message = data.get("message")
-    messages=[]
     #global contexto
     #global preguntas
     #global pregunta
@@ -61,10 +61,15 @@ def chat():
     preguntas = session.get("preguntas", [])
     contexto = session.get("contexto", {})
     pregunta = session.get("pregunta", "")
+    messages = session.get("messages", [])
     print(preguntas)
     messages.append({"role": "system", "content": "Eres un asistente educativo experto en ajustes razonables en matemáticas."})
-    
-    if len(preguntas)>0:
+    messages.append({
+    "role": "user",
+    "content": message
+    })
+    session.modified = True
+    if len(preguntas)>0 and any("Iniciar generación del ajuste razonable" in msg["content"] for msg in messages):
         #messages.append({"role": "user", "content": message})
         
         if len(preguntas)<5:
@@ -100,7 +105,7 @@ def chat():
         return jsonify({
         "response": pregunta
         })    
-    else:
+    elif len(preguntas)<=0 and any("Iniciar generación del ajuste razonable" in msg["content"] for msg in messages):
         if len(preguntas)<3:
             contexto[pregunta]=message
         print(contexto)
@@ -142,10 +147,7 @@ def chat():
             mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
         )
          
-    messages.append({
-    "role": "user",
-    "content": contexto
-    })
+    
     response = openai.ChatCompletion.create(
             model="gpt-4",  # Modelo que deseas usar
             #model="gpt-3.5-turbo",
