@@ -7,6 +7,7 @@ from docx import Document
 from flask import session
 from flask import send_file
 from io import BytesIO
+from datos import Estandar, Desempeño
 
 
 load_dotenv()
@@ -24,15 +25,33 @@ def index(path):
     global preguntas
     global contexto
     global pregunta
+    global grado
+    global periodo
+    global componente
+    global contador
+    global messages
+    session.clear()
+    """GRADO 1:"""
+    
+
+    componente= ["Pensamiento numérico variacional", "Pensamiento Espacial Métrico", "Pensamiento Aleatorio"]
+    session["grado"]=""
+    session["periodo"]=""
+    session["componente"]=""
+    session["contador"]=0
     #pregunta=""
     #contexto={}
     #preguntas=['Cual/es el/los periodo/s a evaluar','Coloque el nivel obtenido por el estudiante: S(superior), A(Alto), B(Básico), Ba(Bajo)','Cuáles son las barreras actitudinales de la familia','Cuáles son las barreras actitudinales del docente','Cuáles son las barreras curriculares']
     session["preguntas"] = [
-        "Cual/es el/los periodo/s a evaluar",
-        "Coloque el nivel obtenido por el estudiante: S(superior), A(Alto), B(Básico), Ba(Bajo)",
-        "Cuáles son las barreras actitudinales de la familia",
-        "Cuáles son las barreras actitudinales del docente",
-        "Cuáles son las barreras curriculares"
+        "Seleccione el grado Grado 1 o Grado 2?",
+        "Seleccione el período Primer período,Segundo período,Tercer período,Cuarto período?",
+        "Seleccione el componente: \n\n"+componente[0]+" \n"+componente[1]+" \n"+componente[2],
+        "Seleccione el estándar"+ session.get("grado", ""),
+        "Seleccione el desempeño"
+        #"Coloque el nivel obtenido por el estudiante: S(superior), A(Alto), B(Básico), Ba(Bajo)",
+        #"Cuáles son las barreras actitudinales de la familia",
+        #"Cuáles son las barreras actitudinales del docente",
+        #"Cuáles son las barreras curriculares"
     ]
     session["messages"]=[]
     session.modified = True
@@ -62,49 +81,59 @@ def chat():
     contexto = session.get("contexto", {})
     pregunta = session.get("pregunta", "")
     messages = session.get("messages", [])
+    grado=session.get("grado", "")
+    periodo=session.get("periodo", "")
+    componente=session.get("componente", "")
+    contador=session.get("contador", 0)
     print(preguntas)
+    print(messages)
     messages.append({"role": "system", "content": "Eres un asistente educativo experto en ajustes razonables en matemáticas."})
     messages.append({
     "role": "user",
     "content": message
     })
     session.modified = True
-    if len(preguntas)>0 and any("Iniciar generación del ajuste razonable" in msg["content"] for msg in messages):
+    
+    if len(preguntas)>=contador and any("Iniciar generación del ajuste razonable" in msg["content"] for msg in messages):
         #messages.append({"role": "user", "content": message})
-        
-        if len(preguntas)<5:
-            if message=='S':
-                message="""
-                Utiliza correctamente la notación decimal para expresar fracciones en 
-                diferentes contextos y relaciono estas dos notaciones con la de los porcentajes.
-                """
-            elif message=='A':
-                message="""
-                Utiliza la notación decimal para expresar fracciones en diferentes contextos y 
-                relaciono estas dos notaciones con la de los porcentajes.
-                """
-            elif message=='B':
-                message="""
-                Con alguna dificultad utiliza la notación decimal para expresar fracciones en diferentes 
-                contextos y relaciono estas dos notaciones con la de los porcentajes.
-                """
-            elif message=='Ba':
-                message="""
-                Se le dificultad utilizar la notación decimal para expresar fracciones en diferentes 
-                contextos y relaciono estas dos notaciones con la de los porcentajes.
-                """
-            contexto[pregunta]=message
-        pregunta=preguntas[0]
-        del preguntas[0]
-        # Guardar nuevamente en la sesión
-        session["preguntas"] = preguntas
-        session["contexto"] = contexto
-        session["pregunta"] = pregunta
-        session.modified = True
-        print(session["contexto"])
-        return jsonify({
-        "response": pregunta
-        })    
+        if pregunta !="" and "Seleccione el grado Grado 1 o Grado 2?" == pregunta:
+            session["grado"]=message
+        elif pregunta !="" and "Seleccione el período Primer período,Segundo período,Tercer período,Cuarto período?" == pregunta:
+            session["periodo"]=message
+        elif "Seleccione el componente" in pregunta:
+            session["componente"]=message
+        if len(preguntas)>contador:
+            pregunta=preguntas[contador]
+            if "Seleccione el estándar" in pregunta:
+                estandares = Estandar[session["grado"]][session["periodo"]][session["componente"]]
+
+                pregunta = "Seleccione el estándar:\n\n"
+                
+                for i, estandar in enumerate(estandares, start=1):
+                    pregunta += f"{i}. {estandar}\n"
+            elif "Seleccione el desempeño" in pregunta:
+                if session["grado"]=='Grado 2':
+                    desempeños = Desempeño[session["grado"]][session["periodo"]]["Pensamiento numérico variacional"]
+                else:
+                    desempeños = Desempeño[session["grado"]][session["periodo"]][session["componente"]]
+                pregunta = "Seleccione el desempeño:\n\n"
+                
+                for i, (nivel,descripcion) in enumerate(desempeños.items(), start=1):
+                    pregunta += f"{i}. {nivel}:{descripcion}\n"         
+            # Guardar nuevamente en la sesión
+            session["preguntas"] = preguntas
+            session["contexto"] = contexto
+            session["pregunta"] = pregunta
+            session["contador"] += 1
+            session["messages"]= messages
+            print("SESSION:", dict(session))
+            session.modified = True
+            print("SESSION:", dict(session))
+            #del preguntas[0]
+            print(session["contexto"])
+            return jsonify({
+            "response": pregunta
+            })    
     elif len(preguntas)<=0 and any("Iniciar generación del ajuste razonable" in msg["content"] for msg in messages):
         if len(preguntas)<3:
             contexto[pregunta]=message
@@ -147,7 +176,7 @@ def chat():
             mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
         )
          
-    
+    """
     response = openai.ChatCompletion.create(
             model="gpt-4",  # Modelo que deseas usar
             #model="gpt-3.5-turbo",
@@ -164,6 +193,6 @@ def chat():
     return jsonify({
         "response": bot_reply
     })
-
+    """
 if __name__ == "__main__":
     app.run(debug=True)
