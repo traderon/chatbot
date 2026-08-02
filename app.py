@@ -40,47 +40,47 @@ def index(path):
 
     componente= ["Pensamiento numérico variacional", "Pensamiento Espacial Métrico", "Pensamiento Aleatorio"]
     barreras_familia=[
-        "No hay acompañamiento en el desarrollo de los procesos educativos del estudiante por lo cual no se evidencian los resultados esperados",
-        "No hay acompañamiento en el desarrollo de pautas de crianza, seguimiento, instrucciones y reconocimiento de figura de autoridad, por lo anterior afecta la convivencia escolar."
+        "1. No hay acompañamiento en el desarrollo de los procesos educativos del estudiante por lo cual no se evidencian los resultados esperados",
+        "2. No hay acompañamiento en el desarrollo de pautas de crianza, seguimiento, instrucciones y reconocimiento de figura de autoridad, por lo anterior afecta la convivencia escolar."
         ]
     barreras_docente=[
-        "Creer que ciertos estudiantes no pueden lograr los mismos resultados que sus compañeros",
-        "Negarse a modificar estrategias de enseñanza para adaptarse a las necesidades diversas del aula",
-        "No considerar las dificultades individuales de los estudiantes y tratarlos con indiferencia",
-        "Tener preferencias por ciertos alumnos y excluir o minimizar a otros",
+        "1. Creer que ciertos estudiantes no pueden lograr los mismos resultados que sus compañeros",
+        "2. Negarse a modificar estrategias de enseñanza para adaptarse a las necesidades diversas del aula",
+        "3. No considerar las dificultades individuales de los estudiantes y tratarlos con indiferencia",
+        "4. Tener preferencias por ciertos alumnos y excluir o minimizar a otros",
         ]
     barreras_curriculares=[
-        "Contenidos rígidos que no se adaptan a las necesidades de los estudiantes",
-        "Falta de flexibilidad en los objetivos de aprendizaje para atender a estudiantes con dificultades específicas",
-        "No hay ajustes curriculares en los DBA de acuerdo con las características del estudiante, su estilo y ritmo de aprendizaje"
+        "1. Contenidos rígidos que no se adaptan a las necesidades de los estudiantes",
+        "2. Falta de flexibilidad en los objetivos de aprendizaje para atender a estudiantes con dificultades específicas",
+        "3. No hay ajustes curriculares en los DBA de acuerdo con las características del estudiante, su estilo y ritmo de aprendizaje"
         ]
     barreras_didacticas=[
-        "No hay ajuste en Metodología, Espacio, Recurso y Comunicación",
-        "No hay ajuste en Metodología y Recursos",
-        "No hay ajustes en Espacio y Comunicación",
-        "No hay ajustes en Metodología, Recursos, Comunicación y Tiempo",
-        "No hay ajustes en Metodología, Recursos y Comunicación",
-        "No hay ajustes en Metodología, Recursos y Tiempo",
-        "No hay ajustes en Metodología, Espacio, Recursos",
-        "No hay ajustes en Comunicación",
-        "No hay ajustes en Metodología",
-        "No hay ajustes en Tiempo",
-        "No hay ajustes en Recursos",
-        "No hay ajuste en Metodología, Espacio, Recurso, Tiempo y Comunicación"
+        "1. No hay ajuste en Metodología, Espacio, Recurso y Comunicación",
+        "2. No hay ajuste en Metodología y Recursos",
+        "3. No hay ajustes en Espacio y Comunicación",
+        "4. No hay ajustes en Metodología, Recursos, Comunicación y Tiempo",
+        "5. No hay ajustes en Metodología, Recursos y Comunicación",
+        "6. No hay ajustes en Metodología, Recursos y Tiempo",
+        "7. No hay ajustes en Metodología, Espacio, Recursos",
+        "8. No hay ajustes en Comunicación",
+        "9. No hay ajustes en Metodología",
+        "10. No hay ajustes en Tiempo",
+        "11. No hay ajustes en Recursos",
+        "12. No hay ajuste en Metodología, Espacio, Recurso, Tiempo y Comunicación"
         ]
     barreras_comunicativas=[
-        "No hay ajuste en Comunicación Aumentativa",
-        "No hay ajuste en Comunicación Alternativa",
-        "No hay ajuste en Comunicación Aumentativa y Alternativa"
+        "1. No hay ajuste en Comunicación Aumentativa",
+        "2. No hay ajuste en Comunicación Alternativa",
+        "3. No hay ajuste en Comunicación Aumentativa y Alternativa"
         ]
     barreras_fisicas=[
-        "Mobiliario",
-        "Ausencia de recursos tecnológicos",
-        "Falta de apoyo, recursos y materiales",
-        "Mobiliario, rampas, adecuaciones, etc",
-        "Organización del espacio del aula y el plantel educativo",
-        "Rampas",
-        "Transprte o acceso educativo insuficiente"    
+        "1. Mobiliario",
+        "2. Ausencia de recursos tecnológicos",
+        "3. Falta de apoyo, recursos y materiales",
+        "4. Mobiliario, rampas, adecuaciones, etc",
+        "5. Organización del espacio del aula y el plantel educativo",
+        "6. Rampas",
+        "7. Transporte o acceso educativo insuficiente"    
         ]
     session["grado"]=""
     session["barreras_familia"]=""
@@ -104,11 +104,11 @@ def index(path):
         "Seleccione el estándar"+ session.get("grado", ""),
         "Seleccione el desempeño",
         "Selecciona cuales son las barreras actitudinales de la familia: \n\n"+barreras_familia[0]+" \n"+barreras_familia[1],
-        "Selecciona cuales son las barreras actitudinales del docente: \n\n:"+barreras_docente[0]+" \n"+barreras_docente[1]+" \n"+barreras_docente[2]+" \n"+barreras_docente[3],
-        "Selecciona cuales son las barreras curriculares: \n\n:"+barreras_curriculares[0]+" \n"+barreras_curriculares[1]+" \n"+barreras_curriculares[2],
-        "Selecciona cuales son las barreras didacticas: \n\n:"+barreras_didacticas[0]+" \n"+barreras_didacticas[1]+" \n"+barreras_didacticas[2]+" \n"+barreras_didacticas[3]+" \n"+barreras_didacticas[4]+" \n"+barreras_didacticas[5]+" \n"+barreras_didacticas[6]+" \n"+barreras_didacticas[7]+" \n"+barreras_didacticas[8]+" \n"+barreras_didacticas[9]+" \n"+barreras_didacticas[10]+" \n"+barreras_didacticas[11],
-        "Selecciona cuales son las barreras comunicativas: \n\n:"+barreras_comunicativas[0]+" \n"+barreras_comunicativas[1]+" \n"+barreras_comunicativas[2],
-        "Selecciona cuales son las barreras físicas: \n\n:"+barreras_fisicas[0]+" \n"+barreras_fisicas[1]+" \n"+barreras_fisicas[2]+" \n"+barreras_fisicas[3]+" \n"+barreras_fisicas[4]+" \n"+barreras_fisicas[5]+" \n"+barreras_fisicas[6]
+        "Selecciona cuales son las barreras actitudinales del docente: \n\n"+barreras_docente[0]+" \n"+barreras_docente[1]+" \n"+barreras_docente[2]+" \n"+barreras_docente[3],
+        "Selecciona cuales son las barreras curriculares: \n\n"+barreras_curriculares[0]+" \n"+barreras_curriculares[1]+" \n"+barreras_curriculares[2],
+        "Selecciona cuales son las barreras didacticas: \n\n"+barreras_didacticas[0]+" \n"+barreras_didacticas[1]+" \n"+barreras_didacticas[2]+" \n"+barreras_didacticas[3]+" \n"+barreras_didacticas[4]+" \n"+barreras_didacticas[5]+" \n"+barreras_didacticas[6]+" \n"+barreras_didacticas[7]+" \n"+barreras_didacticas[8]+" \n"+barreras_didacticas[9]+" \n"+barreras_didacticas[10]+" \n"+barreras_didacticas[11],
+        "Selecciona cuales son las barreras comunicativas: \n\n"+barreras_comunicativas[0]+" \n"+barreras_comunicativas[1]+" \n"+barreras_comunicativas[2],
+        "Selecciona cuales son las barreras físicas: \n\n"+barreras_fisicas[0]+" \n"+barreras_fisicas[1]+" \n"+barreras_fisicas[2]+" \n"+barreras_fisicas[3]+" \n"+barreras_fisicas[4]+" \n"+barreras_fisicas[5]+" \n"+barreras_fisicas[6]
         #"Coloque el nivel obtenido por el estudiante: S(superior), A(Alto), B(Básico), Ba(Bajo)",
         #"Cuáles son las barreras actitudinales de la familia",
         #"Cuáles son las barreras actitudinales del docente",
@@ -182,9 +182,15 @@ def chat():
                 barreras_fisicas=session.get("barreras_fisicas", "")
         elif len(preguntas)>contador:
             if pregunta !="" and "Seleccione el grado Grado 1 o Grado 2?" == pregunta:
-                session["grado"]=message
+                if message in "Grado 1" or message in "1" or message in "uno":
+                    session["grado"]="Grado 1"
+                elif message in "Grado 2" or message in "2" or message in "dos":
+                    session["grado"]="Grado 2"
             elif pregunta !="" and "Seleccione el período Primer período,Segundo período,Tercer período,Cuarto período?" == pregunta:
-                session["periodo"]=message
+                if message in "Primer período" or message in "1" or message in "Primer":
+                    session["periodo"]="Primer período"
+                elif message in "Segundo período" or message in "2" or message in "Segundo":
+                    session["periodo"]="Segundo período"
             elif "Seleccione el componente" in pregunta:
                 session["componente"]=message
             elif "Seleccione el estándar" in pregunta:
