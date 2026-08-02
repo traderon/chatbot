@@ -39,7 +39,56 @@ def index(path):
     
 
     componente= ["Pensamiento numérico variacional", "Pensamiento Espacial Métrico", "Pensamiento Aleatorio"]
+    barreras_familia=[
+        "No hay acompañamiento en el desarrollo de los procesos educativos del estudiante por lo cual no se evidencian los resultados esperados",
+        "No hay acompañamiento en el desarrollo de pautas de crianza, seguimiento, instrucciones y reconocimiento de figura de autoridad, por lo anterior afecta la convivencia escolar."
+        ]
+    barreras_docente=[
+        "Creer que ciertos estudiantes no pueden lograr los mismos resultados que sus compañeros",
+        "Negarse a modificar estrategias de enseñanza para adaptarse a las necesidades diversas del aula",
+        "No considerar las dificultades individuales de los estudiantes y tratarlos con indiferencia",
+        "Tener preferencias por ciertos alumnos y excluir o minimizar a otros",
+        ]
+    barreras_curriculares=[
+        "Contenidos rígidos que no se adaptan a las necesidades de los estudiantes",
+        "Falta de flexibilidad en los objetivos de aprendizaje para atender a estudiantes con dificultades específicas",
+        "No hay ajustes curriculares en los DBA de acuerdo con las características del estudiante, su estilo y ritmo de aprendizaje"
+        ]
+    barreras_didacticas=[
+        "No hay ajuste en Metodología, Espacio, Recurso y Comunicación",
+        "No hay ajuste en Metodología y Recursos",
+        "No hay ajustes en Espacio y Comunicación",
+        "No hay ajustes en Metodología, Recursos, Comunicación y Tiempo",
+        "No hay ajustes en Metodología, Recursos y Comunicación",
+        "No hay ajustes en Metodología, Recursos y Tiempo",
+        "No hay ajustes en Metodología, Espacio, Recursos",
+        "No hay ajustes en Comunicación",
+        "No hay ajustes en Metodología",
+        "No hay ajustes en Tiempo",
+        "No hay ajustes en Recursos",
+        "No hay ajuste en Metodología, Espacio, Recurso, Tiempo y Comunicación"
+        ]
+    barreras_comunicativas=[
+        "No hay ajuste en Comunicación Aumentativa",
+        "No hay ajuste en Comunicación Alternativa",
+        "No hay ajuste en Comunicación Aumentativa y Alternativa"
+        ]
+    barreras_fisicas=[
+        "Mobiliario",
+        "Ausencia de recursos tecnológicos",
+        "Falta de apoyo, recursos y materiales",
+        "Mobiliario, rampas, adecuaciones, etc",
+        "Organización del espacio del aula y el plantel educativo",
+        "Rampas",
+        "Transprte o acceso educativo insuficiente"    
+        ]
     session["grado"]=""
+    session["barreras_familia"]=""
+    session["barreras_docente"]=""
+    session["barreras_curriculares"]=""
+    session["barreras_didacticas"]=""
+    session["barreras_comunicativas"]=""
+    session["barreras_fisicas"]=""
     session["periodo"]=""
     session["componente"]=""
     session["estandar"]=""
@@ -53,7 +102,13 @@ def index(path):
         "Seleccione el período Primer período,Segundo período,Tercer período,Cuarto período?",
         "Seleccione el componente: \n\n"+componente[0]+" \n"+componente[1]+" \n"+componente[2],
         "Seleccione el estándar"+ session.get("grado", ""),
-        "Seleccione el desempeño"
+        "Seleccione el desempeño",
+        "Selecciona cuales son las barreras actitudinales de la familia: \n\n"+barreras_familia[0]+" \n"+barreras_familia[1],
+        "Selecciona cuales son las barreras actitudinales del docente: \n\n:"+barreras_docente[0]+" \n"+barreras_docente[1]+" \n"+barreras_docente[2]+" \n"+barreras_docente[3],
+        "Selecciona cuales son las barreras curriculares: \n\n:"+barreras_curriculares[0]+" \n"+barreras_curriculares[1]+" \n"+barreras_curriculares[2],
+        "Selecciona cuales son las barreras didacticas: \n\n:"+barreras_didacticas[0]+" \n"+barreras_didacticas[1]+" \n"+barreras_didacticas[2]+" \n"+barreras_didacticas[3]+" \n"+barreras_didacticas[4]+" \n"+barreras_didacticas[5]+" \n"+barreras_didacticas[6]+" \n"+barreras_didacticas[7]+" \n"+barreras_didacticas[8]+" \n"+barreras_didacticas[9]+" \n"+barreras_didacticas[10]+" \n"+barreras_didacticas[11],
+        "Selecciona cuales son las barreras comunicativas: \n\n:"+barreras_comunicativas[0]+" \n"+barreras_comunicativas[1]+" \n"+barreras_comunicativas[2],
+        "Selecciona cuales son las barreras físicas: \n\n:"+barreras_fisicas[0]+" \n"+barreras_fisicas[1]+" \n"+barreras_fisicas[2]+" \n"+barreras_fisicas[3]+" \n"+barreras_fisicas[4]+" \n"+barreras_fisicas[5]+" \n"+barreras_fisicas[6]
         #"Coloque el nivel obtenido por el estudiante: S(superior), A(Alto), B(Básico), Ba(Bajo)",
         #"Cuáles son las barreras actitudinales de la familia",
         #"Cuáles son las barreras actitudinales del docente",
@@ -101,6 +156,12 @@ def chat():
     componente=session.get("componente", "")
     estandar=session.get("estandar", "")
     desempeño=session.get("desempeño", "")
+    barreras_familia=session.get("barreras_familia", "")
+    barreras_docente=session.get("barreras_docente", "")
+    barreras_curriculares=session.get("barreras_curriculares", "")
+    barreras_didacticas=session.get("barreras_didacticas", "")
+    barreras_comunicativas=session.get("barreras_comunicativas", "")
+    barreras_fisicas=session.get("barreras_fisicas", "")
     contador=session.get("contador", 0)
     print(preguntas)
     print(messages)
@@ -116,9 +177,9 @@ def chat():
         if len(preguntas)==contador:
             session["contador"] += 1
             contador=session.get("contador", 0)
-            if "Seleccione el desempeño" in pregunta:
-                session["desempeño"]=message
-                desempeño=session.get("desempeño", "")
+            if "Selecciona cuales son las barreras físicas" in pregunta:
+                session["barreras_fisicas"]=message
+                barreras_fisicas=session.get("barreras_fisicas", "")
         elif len(preguntas)>contador:
             if pregunta !="" and "Seleccione el grado Grado 1 o Grado 2?" == pregunta:
                 session["grado"]=message
@@ -128,6 +189,18 @@ def chat():
                 session["componente"]=message
             elif "Seleccione el estándar" in pregunta:
                 session["estandar"]=message    
+            elif "Selecciona cuales son las barreras actitudinales de la familia" in pregunta:
+                session["barreras_familia"]=message
+            elif "Selecciona cuales son las barreras actitudinales del docente" in pregunta:
+                session["barreras_docente"]=message
+            elif "Selecciona cuales son las barreras curriculares" in pregunta:   
+                session["barreras_curriculares"]=message
+            elif "Selecciona cuales son las barreras didacticas" in pregunta:
+                session["barreras_didacticas"]=message
+            elif "Selecciona cuales son las barreras comunicativas" in pregunta:
+                session["barreras_comunicativas"]=message
+            elif "Seleccione el desempeño" in pregunta:
+                session["desempeño"]=message
             pregunta=preguntas[contador]
             if "Seleccione el estándar" in pregunta:
                 estandares = Estandar[session["grado"]][session["periodo"]][session["componente"]]
@@ -183,7 +256,42 @@ def chat():
                         desempeño
                     )
                     break
-                
+                if p.text.strip() == "FAMILIA:" and numeroCelda==2:
+                    insertar_parrafo_despues(
+                        p,
+                        barreras_familia
+                    )
+                    
+                if p.text.strip() == "DOCENTE:" and numeroCelda==2:
+                    insertar_parrafo_despues(
+                        p,
+                        barreras_docente
+                    )
+                    
+                if p.text.strip() == "BARRERAS CURRICULARES" and numeroCelda==2:
+                    insertar_parrafo_despues(
+                        p,
+                        barreras_curriculares
+                    )
+                    
+                if p.text.strip() == "BARRERA DIDÁCTICA" and numeroCelda==2:
+                    insertar_parrafo_despues(
+                        p,
+                        barreras_didacticas
+                    )
+                    
+                if p.text.strip() == "BARRERAS COMUNICATIVAS" and numeroCelda==2:
+                    insertar_parrafo_despues(
+                        p,
+                        barreras_comunicativas
+                    )   
+                    
+                if p.text.strip() == "BARRERAS FISICAS" and numeroCelda==2:
+                    insertar_parrafo_despues(
+                        p,
+                        barreras_fisicas
+                    ) 
+                           
         doc.save("resultado.docx")
         # Crear tabla de 2 columnas
         #tabla = documento.add_table(rows=1, cols=3)
