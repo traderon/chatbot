@@ -4,6 +4,8 @@ import openai
 import os
 from dotenv import load_dotenv
 from docx import Document
+from docx.text.paragraph import Paragraph
+from docx.oxml import OxmlElement
 from flask import session
 from flask import send_file
 from io import BytesIO
@@ -28,6 +30,8 @@ def index(path):
     global grado
     global periodo
     global componente
+    global estandar
+    global desempeño
     global contador
     global messages
     session.clear()
@@ -38,6 +42,8 @@ def index(path):
     session["grado"]=""
     session["periodo"]=""
     session["componente"]=""
+    session["estandar"]=""
+    session["desempeño"]=""
     session["contador"]=0
     #pregunta=""
     #contexto={}
@@ -67,6 +73,15 @@ def index(path):
     else:
         return send_from_directory(app.static_folder, 'index.html')
 
+def insertar_parrafo_despues(parrafo, texto):
+    nuevo = OxmlElement("w:p")
+    parrafo._p.addnext(nuevo)
+
+    nuevo_parrafo = Paragraph(nuevo, parrafo._parent)
+    nuevo_parrafo.add_run(texto)
+
+    return nuevo_parrafo
+
 @app.route("/chat", methods=["POST"])
 def chat():
     openai.api_key = os.environ.get("OPENAI_SECRET_KEY")
@@ -84,6 +99,8 @@ def chat():
     grado=session.get("grado", "")
     periodo=session.get("periodo", "")
     componente=session.get("componente", "")
+    estandar=session.get("estandar", "")
+    desempeño=session.get("desempeño", "")
     contador=session.get("contador", 0)
     print(preguntas)
     print(messages)
@@ -96,13 +113,21 @@ def chat():
     
     if len(preguntas)>=contador and any("Iniciar generación del ajuste razonable" in msg["content"] for msg in messages):
         #messages.append({"role": "user", "content": message})
-        if pregunta !="" and "Seleccione el grado Grado 1 o Grado 2?" == pregunta:
-            session["grado"]=message
-        elif pregunta !="" and "Seleccione el período Primer período,Segundo período,Tercer período,Cuarto período?" == pregunta:
-            session["periodo"]=message
-        elif "Seleccione el componente" in pregunta:
-            session["componente"]=message
-        if len(preguntas)>contador:
+        if len(preguntas)==contador:
+            session["contador"] += 1
+            contador=session.get("contador", 0)
+            if "Seleccione el desempeño" in pregunta:
+                session["desempeño"]=message
+                desempeño=session.get("desempeño", "")
+        elif len(preguntas)>contador:
+            if pregunta !="" and "Seleccione el grado Grado 1 o Grado 2?" == pregunta:
+                session["grado"]=message
+            elif pregunta !="" and "Seleccione el período Primer período,Segundo período,Tercer período,Cuarto período?" == pregunta:
+                session["periodo"]=message
+            elif "Seleccione el componente" in pregunta:
+                session["componente"]=message
+            elif "Seleccione el estándar" in pregunta:
+                session["estandar"]=message    
             pregunta=preguntas[contador]
             if "Seleccione el estándar" in pregunta:
                 estandares = Estandar[session["grado"]][session["periodo"]][session["componente"]]
@@ -124,8 +149,8 @@ def chat():
             session["preguntas"] = preguntas
             session["contexto"] = contexto
             session["pregunta"] = pregunta
-            session["contador"] += 1
             session["messages"]= messages
+            session["contador"] += 1
             print("SESSION:", dict(session))
             session.modified = True
             print("SESSION:", dict(session))
@@ -134,39 +159,59 @@ def chat():
             return jsonify({
             "response": pregunta
             })    
-    elif len(preguntas)<=0 and any("Iniciar generación del ajuste razonable" in msg["content"] for msg in messages):
+    if contador>len(preguntas) and any("Iniciar generación del ajuste razonable" in msg["content"] for msg in messages):
         if len(preguntas)<3:
             contexto[pregunta]=message
         print(contexto)
-        documento = Document()
-
+        #documento = Document()
+        doc = Document("PIAR.docx")
+        
+        for numeroCelda in range(1,4):
+            celda = doc.tables[0].cell(1, numeroCelda)
+            
+            for i, p in enumerate(celda.paragraphs):
+                print(i, p.text)
+                if p.text.strip() == "PRIMER PERIODO" and numeroCelda==1:
+                    insertar_parrafo_despues(
+                        p,
+                        periodo+"\n\n"+componente+"\n\n"+estandar
+                    )
+                    break
+                if p.text.strip() == "Reformulación:" and numeroCelda==3:
+                    insertar_parrafo_despues(
+                        p,
+                        desempeño
+                    )
+                    break
+                
+        doc.save("resultado.docx")
         # Crear tabla de 2 columnas
-        tabla = documento.add_table(rows=1, cols=3)
-        tabla.style = 'Table Grid'
+        #tabla = documento.add_table(rows=1, cols=3)
+        #tabla.style = 'Table Grid'
         
         # Encabezados
-        encabezado = tabla.rows[0].cells
-        encabezado[0].text = contexto["Cual/es el/los periodo/s a evaluar"]
-        encabezado[1].text = 'Barreras actitudinales del aprendizaje'
-        encabezado[2].text = 'PRIMER PERIODO Y SEGUNDO PERFIODO'
+        #encabezado = tabla.rows[0].cells
+        #encabezado[0].text = contexto["Cual/es el/los periodo/s a evaluar"]
+        #encabezado[1].text = 'Barreras actitudinales del aprendizaje'
+        #encabezado[2].text = 'PRIMER PERIODO Y SEGUNDO PERFIODO'
 
         
         # Agregar datos
         
-        fila = tabla.add_row().cells
-        fila[0].text = contexto["Coloque el nivel obtenido por el estudiante: S(superior), A(Alto), B(Básico), Ba(Bajo)"]
-        fila[1].text = 'Familia: \n'+str(list(contexto.values())[2])+'\n Docente: \n'+str(list(contexto.values())[3])+'\n Barreras curriculares: \n'+str(list(contexto.values())[4])
-        fila[2].text = 'ADAPTACIÓN CURRICULAR: \n'+"""Priorización:  .por dos periodos académicos 
-        Desarrollar el reconocimiento visual y manipulativo de los números del 1 al 10 mediante el uso de material concreto, pictogramas y rutinas repetitivas, permitiendo que la estudiante identifique cada número y lo asocie con una cantidad correspondiente, sin requerir lenguaje oral o simbólico complejo.Reformulación: 
-        Reconoce y compara cantidades simples (mitad, entero, vacío, lleno) usando material concreto y apoyos visuales, sin necesidad de lenguaje estructurado. Identifica cuándo una cantidad es “una parte” o “todas las partes” en diferentes situaciones manipulativas.
-        """
+        #fila = tabla.add_row().cells
+        #fila[0].text = contexto["Coloque el nivel obtenido por el estudiante: S(superior), A(Alto), B(Básico), Ba(Bajo)"]
+        #fila[1].text = 'Familia: \n'+str(list(contexto.values())[2])+'\n Docente: \n'+str(list(contexto.values())[3])+'\n Barreras curriculares: \n'+str(list(contexto.values())[4])
+        #fila[2].text = 'ADAPTACIÓN CURRICULAR: \n'+"""Priorización:  .por dos periodos académicos 
+        #Desarrollar el reconocimiento visual y manipulativo de los números del 1 al 10 mediante el uso de material concreto, pictogramas y rutinas repetitivas, permitiendo que la estudiante identifique cada número y lo asocie con una cantidad correspondiente, sin requerir lenguaje oral o simbólico complejo.Reformulación: 
+        #Reconoce y compara cantidades simples (mitad, entero, vacío, lleno) usando material concreto y apoyos visuales, sin necesidad de lenguaje estructurado. Identifica cuándo una cantidad es “una parte” o “todas las partes” en diferentes situaciones manipulativas.
+        #"""
         
         #documento.save('reporte.docx')
         #return jsonify({
         #"response": "Gracias por tus respuestas"
         # })
         buffer = BytesIO()
-        documento.save(buffer)
+        doc.save(buffer)
         buffer.seek(0)
         
         return send_file(
