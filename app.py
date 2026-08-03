@@ -182,17 +182,22 @@ def chat():
                 barreras_fisicas=session.get("barreras_fisicas", "")
         elif len(preguntas)>contador:
             if pregunta !="" and "Seleccione el grado Grado 1 o Grado 2?" == pregunta:
-                if message in "Grado 1" or message in "1" or message in "uno":
+                if message in "Grado 1" or message in "1" or message in "uno" or message in "grado 1":
                     session["grado"]="Grado 1"
-                elif message in "Grado 2" or message in "2" or message in "dos":
+                elif message in "Grado 2" or message in "2" or message in "dos" or message in "grado 2":
                     session["grado"]="Grado 2"
             elif pregunta !="" and "Seleccione el período Primer período,Segundo período,Tercer período,Cuarto período?" == pregunta:
-                if message in "Primer período" or message in "1" or message in "Primer":
+                if message in "Primer período" or message in "1" or message in "Primer" or message in "Primero" or message in "primer" or message in "primero":
                     session["periodo"]="Primer período"
-                elif message in "Segundo período" or message in "2" or message in "Segundo":
+                elif message in "Segundo período" or message in "2" or message in "Segundo" or message in "segundo":
                     session["periodo"]="Segundo período"
             elif "Seleccione el componente" in pregunta:
-                session["componente"]=message
+                if message in "Pensamiento numérico variacional" or message in "numérico" or message in "numerico" or message in "Numerico" or message in "Numérico":
+                    session["componente"]="Pensamiento numérico variacional"
+                elif message in "Pensamiento Espacial Métrico" or message in "métrico" or message in "metrico" or message in "Metrico" or message in "Métrico":
+                    session["componente"]="Pensamiento Espacial Métrico"
+                elif message in "Pensamiento Aleatorio" or message in "Aleatorio" or message in "aleatorio":
+                    session["componente"]="Pensamiento Aleatorio"    
             elif "Seleccione el estándar" in pregunta:
                 session["estandar"]=message    
             elif "Selecciona cuales son las barreras actitudinales de la familia" in pregunta:
