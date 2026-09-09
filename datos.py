@@ -117,8 +117,243 @@ Estandar = {
                 "Predigo si la posibilidad de ocurrencia de un evento es mayor que la de otro."
                 ]
             }
+        },
+    
+    
+    "Grado 3":{
+       "Primer período": {
+            "Pensamiento numérico variacional": [
+                "Uso diversas estrategias de cálculo (especialmente cálculo mental) y de estimación para resolver problemas en situaciones aditivas y multiplicativas.",
+                "Identifico, si a la luz de los datos de un problema, los resultados obtenidos son o no razonables.",
+                "Describo cualitativamente situaciones de cambio y variación utilizando el lenguaje natural, dibujos y gráficas."
+            ],
+        
+            "Pensamiento Espacial Métrico": [
+                "Reconozco y aplico traslaciones y giros sobre una figura.",
+                "Analizo y explico sobre la pertinencia de patrones e instrumentos en procesos de medición.",
+                "Reconozco el uso de las magnitudes y sus unidades de medida en situaciones aditivas y multiplicativas."
+            ],
+        
+            "Pensamiento Aleatorio": [
+                "Resuelvo y formulo preguntas que requieran para su solución coleccionar y analizar datos del entorno próximo."
+            ]
+        },
+        "Segundo período": {
+            "Pensamiento numérico variacional": [
+                "Uso diversas estrategias de cálculo (especialmente cálculo mental) y de estimación para resolver problemas en situaciones aditivas y multiplicativas.",
+                "Identifico, si a la luz de los datos de un problema, los resultados obtenidos son o no razonables.",
+                "Describo cualitativamente situaciones de cambio y variación utilizando el lenguaje natural, dibujos y gráficas."
+            ],
+        
+            "Pensamiento Espacial Métrico": [
+                "Realizo construcciones y diseños utilizando cuerpos y figuras geométricas tridimensionales y dibujos o figuras geométricas bidimensionales.",
+                "Analizo y explico sobre la pertinencia de patrones e instrumentos en procesos de medición.",
+                "Reconozco el uso de las magnitudes y sus unidades de medida en situaciones aditivas y multiplicativas."
+            ],
+        
+            "Pensamiento Aleatorio": [
+                "Identifico regularidades y tendencias en un conjunto de datos."
+            ]
+        },
+        "Tercer período": {
+            "Pensamiento numérico variacional": [
+                "Uso diversas estrategias de cálculo (especialmente cálculo mental) y de estimación para resolver problemas en situaciones aditivas y multiplicativas.",
+                "Identifico si a la luz de los datos de un problema, los resultados obtenidos son o no razonables.",
+                "Construyo secuencias numéricas y geométricas utilizando propiedades de los números y de las figuras geométricas."
+            ],
+        
+            "Pensamiento Espacial Métrico": [
+                "Reconozco congruencia y semejanza entre figuras (ampliar, reducir).",
+                "Realizo estimaciones de medidas requeridas en la resolución de problemas relativos particularmente a la vida social, económica y de las ciencias."
+            ],
+        
+            "Pensamiento Aleatorio": [
+                "Predigo si la posibilidad de ocurrencia de un evento es mayor que la de otro."
+            ]
+        },
+        "Cuarto período": {
+            "Pensamiento numérico variacional": [
+                "Describo situaciones de medición utilizando fracciones comunes.",
+                "Resuelvo y formulo problemas en situaciones de variación proporcional.",
+                "Construyo secuencias numéricas y geométricas utilizando propiedades de los números y de las figuras geométricas."
+            ],
+        
+            "Pensamiento Espacial Métrico": [
+                "Desarrollo habilidades para relacionar dirección, distancia y posición en el espacio.",
+                "Reconozco y valoro simetrías en distintos aspectos del arte y el diseño.",
+                "Realizo estimaciones de medidas requeridas en la resolución de problemas relativos particularmente a la vida social, económica y de las ciencias."
+            ],
+        
+            "Pensamiento Aleatorio": [
+                "Predigo si la posibilidad de ocurrencia de un evento es mayor que la de otro."
+            ]
         }
-    }
+        
+            },
+    "Grado 4":{
+        "Primer período": {
+            "Pensamiento y sistemas numéricos": [
+                "Uso diversas estrategias de cálculo y de estimación para resolver problemas en situaciones aditivas y multiplicativas.",
+                "Identifico en el contexto de una situación, la necesidad de un cálculo exacto o aproximado y lo razonable de los resultados obtenidos.",
+                "Justifico regularidades y propiedades de los números, sus relaciones y operaciones."
+            ],
+        
+            "Pensamiento espacial y sistema geométrico": [
+                "Comparo y clasifico figuras bidimensionales de acuerdo con sus componentes (ángulos, vértices) y características.",
+                "Identifico, represento y utilizo ángulos en giros, aberturas, inclinaciones, figuras, puntas y esquinas en situaciones estáticas y dinámicas."
+            ],
+        
+            "Pensamiento métrico y sistema de medidas": [
+                "Reconozco el uso de algunas magnitudes (longitud, área, volumen, capacidad, peso y masa, duración, rapidez, temperatura) y de algunas de las unidades que se usan para medir cantidades de la magnitud respectiva en situaciones aditivas y multiplicativas."
+            ],
+        
+            "Pensamiento aleatorio y sistemas de datos": [
+                "Represento datos usando tablas y gráficas (pictogramas, gráficas de barras, diagramas de líneas, diagramas circulares)."
+            ],
+        
+            "Pensamiento variacional y sistema algebraico y analíticos": [
+                "Describo e interpreto variaciones representadas en gráficos."
+            ]
+        },
+        "Segundo período": {
+            "Pensamiento y sistemas numéricos": [
+                "Utilizo la notación decimal para expresar fracciones en diferentes contextos y relaciono estas dos notaciones con la de los porcentajes."
+            ],
+        
+            "Pensamiento espacial y sistema geométrico": [
+                "Identifico y justifico relaciones de congruencia y semejanza entre figuras.",
+                "Construyo y descompongo figuras y sólidos a partir de condiciones dadas."
+            ],
+        
+            "Pensamiento métrico y sistema de medidas": [
+                "Diferencio y ordeno, en objetos y eventos, propiedades o atributos que se puedan medir (longitudes, distancias, áreas de superficies, volúmenes de cuerpos sólidos, volúmenes de líquidos y capacidades de recipientes; pesos y masa de cuerpos sólidos; duración de eventos o procesos; amplitud de ángulos)."
+            ],
+        
+            "Pensamiento aleatorio y sistemas de datos": [
+                "Represento datos usando tablas y gráficas (pictogramas, gráficas de barras, diagramas de líneas, diagramas circulares)."
+            ],
+        
+            "Pensamiento variacional y sistema algebraico y analíticos": [
+                "Predigo patrones de variación en una secuencia numérica, geométrica o gráfica."
+            ]
+        },
+        "Tercer período": {
+            "Pensamiento y sistemas numéricos": [
+                "Justifico el valor de posición en el sistema de numeración decimal en relación con el conteo recurrente de unidades.",
+                "Utilizo la notación decimal para expresar fracciones en diferentes contextos y relaciono estas dos notaciones con la de los porcentajes."
+            ],
+        
+            "Pensamiento espacial y sistema geométrico": [
+                "Construyo y descompongo figuras y sólidos a partir de condiciones dadas."
+            ],
+        
+            "Pensamiento métrico y sistema de medidas": [
+                "Diferencio y ordeno, en objetos y eventos, propiedades o atributos que se puedan medir (longitudes, distancias, áreas de superficie, volúmenes de cuerpos sólidos, volúmenes de líquidos y capacidades de recipientes; pesos y masa de cuerpos sólidos; duración de eventos o procesos; amplitud de ángulos)."
+            ],
+        
+            "Pensamiento aleatorio y sistemas de datos": [
+                "Interpreto información presentada en tablas y gráficas (pictogramas, gráficas de barras, diagramas de líneas, diagramas circulares).",
+                "Uso e interpreto la media (o promedio) y la mediana y comparo lo que indican."
+            ],
+        
+            "Pensamiento variacional y sistema algebraico y analíticos": [
+                "Construyo igualdades y desigualdades numéricas como representación de relaciones entre distintos datos."
+            ]
+        },
+        "Cuarto período": {
+            "Pensamiento y sistemas numéricos": [
+                "Justifico el valor de posición en el sistema de numeración decimal en relación con el conteo recurrente de unidades.",
+                "Predigo patrones de variación en una secuencia numérica, geométrica o gráfica."
+            ],
+        
+            "Pensamiento espacial y sistema geométrico": [
+                "Conjeturo y verifico los resultados de aplicar transformaciones a figuras en el plano para construir diseños."
+            ],
+        
+            "Pensamiento métrico y sistema de medidas": [
+                "Selecciono unidades, tanto convencionales como estandarizadas, apropiadas para diferentes mediciones."
+            ],
+        
+            "Pensamiento aleatorio y sistemas de datos": [
+                "Conjeturo y pongo a prueba predicciones acerca de la posibilidad de ocurrencia de eventos."
+            ],
+        
+            "Pensamiento variacional y sistema algebraico y analíticos": [
+                "Analizo y explico relaciones de dependencia entre cantidades que varían en el tiempo con cierta regularidad en situaciones económicas, sociales y de las ciencias naturales."
+            ]
+        }
+             
+       },   
+    "Grado 5":{
+        "Primer período": {
+            "Pensamiento numérico variacional": [
+                "Resuelvo y formulo problemas cuya estrategia de solución requiera de las relaciones y propiedades de los números naturales y sus operaciones."
+            ],
+        
+            "Pensamiento Espacial Métrico": [
+                "Identifico y justifico relaciones de congruencia y semejanza entre figuras.",
+                "Reconozco el uso de algunas magnitudes (longitud, área, volumen, capacidad, peso y masa, duración, rapidez, temperatura) y de algunas de las unidades que se usan para medir cantidades de la magnitud respectiva en situaciones aditivas y multiplicativas."
+            ],
+        
+            "Pensamiento Aleatorio": [
+                "Interpreto información presentada en tablas y gráficas (pictogramas, gráficas de barras, diagramas de líneas, diagramas circulares)."
+            ]
+        },
+        "Segundo período": {
+            "Pensamiento numérico variacional": [
+                "Resuelvo y formulo problemas cuya estrategia de solución requiera de las relaciones y propiedades de los números naturales y sus operaciones.",
+                "Uso diversas estrategias de cálculo y de estimación para resolver problemas en situaciones aditivas y multiplicativas.",
+                "Analizo y explico relaciones de dependencia entre cantidades que varían en el tiempo con cierta regularidad en situaciones económicas, sociales y de las ciencias naturales."
+            ],
+        
+            "Pensamiento Espacial Métrico": [
+                "Conjeturo y verifico los resultados de aplicar transformaciones a figuras en el plano para construir diseños.",
+                "Describo y argumento relaciones entre el perímetro y el área de figuras diferentes, cuando se fija una de estas medidas."
+            ],
+        
+            "Pensamiento Aleatorio": [
+                "Uso e interpreto la media (o promedio) y la mediana y comparo lo que indican."
+            ]
+        },
+        "Tercer período": {
+            "Pensamiento numérico variacional": [
+                "Resuelvo y formulo problemas en situaciones de proporcionalidad directa, inversa y producto de medidas.",
+                "Identifico la potenciación y la radicación en contextos matemáticos y no matemáticos.",
+                "Construyo igualdades y desigualdades numéricas como representación de relaciones entre distintos datos."
+            ],
+        
+            "Pensamiento Espacial Métrico": [
+                "Utilizo sistemas de coordenadas para especificar localizaciones y describir relaciones espaciales.",
+                "Describo y argumento relaciones entre el perímetro y el área de figuras diferentes, cuando se fija una de estas medidas.",
+                "Justifico relaciones de dependencia del área y volumen respecto a las dimensiones de figuras y sólidos."
+            ],
+        
+            "Pensamiento Aleatorio": [
+                "Describo la manera como parecen distribuirse los distintos datos de un conjunto de ellos y la comparo con la manera como se distribuyen en otros conjuntos de datos."
+            ]
+        },
+        "Cuarto período": {
+            "Pensamiento numérico variacional": [
+                "Identifico y uso medidas relativas en distintos contextos.",
+                "Modelo situaciones de dependencia mediante la proporcionalidad directa e inversa.",
+                "Identifico, en el contexto de una situación, la necesidad de un cálculo exacto o aproximado y lo razonable de los resultados obtenidos.",
+                "Justifico regularidades y propiedades de los números, sus relaciones y operaciones."
+            ],
+        
+            "Pensamiento Espacial Métrico": [
+                "Identifico, represento y utilizo ángulos en giros, aberturas, inclinaciones, figuras, puntas y esquinas en situaciones estáticas y dinámicas.",
+                "Construyo objetos tridimensionales a partir de representaciones bidimensionales y puedo realizar el proceso contrario en contextos de arte, diseño y arquitectura.",
+                "Utilizo y justifico el uso de la estimación para resolver problemas relativos a la vida social, económica y de las ciencias, utilizando rangos de variación.",
+                "Utilizo diferentes procedimientos de cálculo para hallar el área de la superficie exterior y el volumen de algunos cuerpos sólidos."
+            ],
+        
+            "Pensamiento Aleatorio": [
+                "Resuelvo y formulo problemas a partir de un conjunto de datos provenientes de observaciones, consultas o experimentos."
+            ]
+        }
+
+            }
+              }
     
 Desempeño= {
     "Grado 1": {
@@ -248,5 +483,305 @@ Desempeño= {
             }
         }
         
+        },
+    "Grado 3":{
+       "Primer período": {
+            "Pensamiento numérico variacional": {
+                "SUPERIOR": "Describe, compara y cuantifica con exactitud situaciones con números, en diferentes contextos y con diversas representaciones.",
+                "ALTO": "Describe, compara y cuantifica situaciones con números, en diferentes contextos y con diversas representaciones.",
+                "BÁSICO": "Con ayuda describe, compara y cuantifica situaciones con números, en diferentes contextos y con diversas representaciones.",
+                "BAJO": "Se le dificulta describir, comparar y cuantificar situaciones con números, en diferentes contextos y con diversas representaciones."
+            },
+        
+            "Pensamiento Espacial Métrico": {
+                "SUPERIOR": "Describe, compara y cuantifica con exactitud situaciones con números, en diferentes contextos y con diversas representaciones.",
+                "ALTO": "Describe, compara y cuantifica situaciones con números, en diferentes contextos y con diversas representaciones.",
+                "BÁSICO": "Con ayuda describe, compara y cuantifica situaciones con números, en diferentes contextos y con diversas representaciones.",
+                "BAJO": "Se le dificulta describir, comparar y cuantificar situaciones con números, en diferentes contextos y con diversas representaciones."
+            },
+        
+            "Pensamiento Aleatorio": {
+                "SUPERIOR": "Describe, compara y cuantifica con exactitud situaciones con números, en diferentes contextos y con diversas representaciones.",
+                "ALTO": "Describe, compara y cuantifica situaciones con números, en diferentes contextos y con diversas representaciones.",
+                "BÁSICO": "Con ayuda describe, compara y cuantifica situaciones con números, en diferentes contextos y con diversas representaciones.",
+                "BAJO": "Se le dificulta describir, comparar y cuantificar situaciones con números, en diferentes contextos y con diversas representaciones."
+            }
+        },
+        "Segundo período": {
+            "Pensamiento numérico variacional": {
+                "SUPERIOR": "El estudiante reconoce y aplica ampliamente el significado del número en diferentes contextos (medición, conteo, comparación, codificación, localización entre otros), realiza cálculos con ellos y resuelve con facilidad diversas situaciones.",
+                "ALTO": "El estudiante reconoce el significado del número en diferentes contextos (medición, conteo, comparación, codificación, localización entre otros), realiza cálculos con ellos y resuelve situaciones.",
+                "BÁSICO": "El estudiante aplica el significado del número en algunos contextos (medición, conteo, comparación, codificación, localización entre otros), realiza cálculos con ellos y resuelve situaciones con ayuda.",
+                "BAJO": "Al estudiante se le dificulta reconocer y aplicar el significado del número en diferentes contextos (medición, conteo, comparación, codificación, localización entre otros), realiza pocos cálculos con ellos y no resuelve situaciones."
+            },
+        
+            "Pensamiento Espacial Métrico": {
+                "SUPERIOR": "El estudiante reconoce y aplica ampliamente el significado del número en diferentes contextos (medición, conteo, comparación, codificación, localización entre otros), realiza cálculos con ellos y resuelve con facilidad diversas situaciones.",
+                "ALTO": "El estudiante reconoce el significado del número en diferentes contextos (medición, conteo, comparación, codificación, localización entre otros), realiza cálculos con ellos y resuelve situaciones.",
+                "BÁSICO": "El estudiante aplica el significado del número en algunos contextos (medición, conteo, comparación, codificación, localización entre otros), realiza cálculos con ellos y resuelve situaciones con ayuda.",
+                "BAJO": "Al estudiante se le dificulta reconocer y aplicar el significado del número en diferentes contextos (medición, conteo, comparación, codificación, localización entre otros), realiza pocos cálculos con ellos y no resuelve situaciones."
+            },
+        
+            "Pensamiento Aleatorio": {
+                "SUPERIOR": "El estudiante reconoce y aplica ampliamente el significado del número en diferentes contextos (medición, conteo, comparación, codificación, localización entre otros), realiza cálculos con ellos y resuelve con facilidad diversas situaciones.",
+                "ALTO": "El estudiante reconoce el significado del número en diferentes contextos (medición, conteo, comparación, codificación, localización entre otros), realiza cálculos con ellos y resuelve situaciones.",
+                "BÁSICO": "El estudiante aplica el significado del número en algunos contextos (medición, conteo, comparación, codificación, localización entre otros), realiza cálculos con ellos y resuelve situaciones con ayuda.",
+                "BAJO": "Al estudiante se le dificulta reconocer y aplicar el significado del número en diferentes contextos (medición, conteo, comparación, codificación, localización entre otros), realiza pocos cálculos con ellos y no resuelve situaciones."
+            }
+        },
+        "Tercer período": {
+            "Pensamiento numérico variacional": {
+                "SUPERIOR": "El estudiante realiza con precisión estrategias de cálculo y estimación, usa correctamente las magnitudes, sus unidades de medida y predice la posibilidad de ocurrencia de un evento en diversas situaciones.",
+                "ALTO": "El estudiante realiza estrategias de cálculo y estimación, usa las magnitudes, sus unidades de medida y predice la posibilidad de ocurrencia de un evento en situaciones sencillas.",
+                "BÁSICO": "El estudiante, con apoyo, realiza estrategias de cálculo y estimación, usa algunas magnitudes, sus unidades de medida y predice la posibilidad de ocurrencia de un evento en situaciones sencillas.",
+                "BAJO": "Al estudiante se le dificulta realizar estrategias de cálculo y estimación, usar algunas magnitudes, sus unidades de medida y predecir la posibilidad de ocurrencia de un evento en situaciones sencillas."
+            },
+        
+            "Pensamiento Espacial Métrico": {
+                "SUPERIOR": "El estudiante realiza con precisión estrategias de cálculo y estimación, usa correctamente las magnitudes, sus unidades de medida y predice la posibilidad de ocurrencia de un evento en diversas situaciones.",
+                "ALTO": "El estudiante realiza estrategias de cálculo y estimación, usa las magnitudes, sus unidades de medida y predice la posibilidad de ocurrencia de un evento en situaciones sencillas.",
+                "BÁSICO": "El estudiante, con apoyo, realiza estrategias de cálculo y estimación, usa algunas magnitudes, sus unidades de medida y predice la posibilidad de ocurrencia de un evento en situaciones sencillas.",
+                "BAJO": "Al estudiante se le dificulta realizar estrategias de cálculo y estimación, usar algunas magnitudes, sus unidades de medida y predecir la posibilidad de ocurrencia de un evento en situaciones sencillas."
+            },
+        
+            "Pensamiento Aleatorio": {
+                "SUPERIOR": "El estudiante realiza con precisión estrategias de cálculo y estimación, usa correctamente las magnitudes, sus unidades de medida y predice la posibilidad de ocurrencia de un evento en diversas situaciones.",
+                "ALTO": "El estudiante realiza estrategias de cálculo y estimación, usa las magnitudes, sus unidades de medida y predice la posibilidad de ocurrencia de un evento en situaciones sencillas.",
+                "BÁSICO": "El estudiante, con apoyo, realiza estrategias de cálculo y estimación, usa algunas magnitudes, sus unidades de medida y predice la posibilidad de ocurrencia de un evento en situaciones sencillas.",
+                "BAJO": "Al estudiante se le dificulta realizar estrategias de cálculo y estimación, usar algunas magnitudes, sus unidades de medida y predecir la posibilidad de ocurrencia de un evento en situaciones sencillas."
+            }
+        },
+        "Cuarto período": {
+            "Pensamiento numérico variacional": {
+                "SUPERIOR": "El estudiante describe y resuelve correctamente situaciones de medición utilizando fracciones comunes, secuencias numéricas y geométricas, y predice la ocurrencia de un evento.",
+                "ALTO": "El estudiante describe y resuelve algunas situaciones de medición utilizando fracciones comunes, secuencias numéricas y geométricas, y predice la ocurrencia de un evento.",
+                "BÁSICO": "El estudiante describe y resuelve con ayuda situaciones de medición utilizando fracciones comunes, secuencias numéricas y geométricas, y predice la ocurrencia de algunos eventos.",
+                "BAJO": "El estudiante presenta dificultad para describir y resolver situaciones de medición con fracciones comunes, secuencias numéricas y geométricas, y para predecir la ocurrencia de un evento."
+            },
+            "Pensamiento Espacial Métrico": {
+                "SUPERIOR": "El estudiante describe y resuelve correctamente situaciones de medición utilizando fracciones comunes, secuencias numéricas y geométricas, y predice la ocurrencia de un evento.",
+                "ALTO": "El estudiante describe y resuelve algunas situaciones de medición utilizando fracciones comunes, secuencias numéricas y geométricas, y predice la ocurrencia de un evento.",
+                "BÁSICO": "El estudiante describe y resuelve con ayuda situaciones de medición utilizando fracciones comunes, secuencias numéricas y geométricas, y predice la ocurrencia de algunos eventos.",
+                "BAJO": "El estudiante presenta dificultad para describir y resolver situaciones de medición con fracciones comunes, secuencias numéricas y geométricas, y para predecir la ocurrencia de un evento."
+            },
+            "Pensamiento Aleatorio": {
+                "SUPERIOR": "El estudiante describe y resuelve correctamente situaciones de medición utilizando fracciones comunes, secuencias numéricas y geométricas, y predice la ocurrencia de un evento.",
+                "ALTO": "El estudiante describe y resuelve algunas situaciones de medición utilizando fracciones comunes, secuencias numéricas y geométricas, y predice la ocurrencia de un evento.",
+                "BÁSICO": "El estudiante describe y resuelve con ayuda situaciones de medición utilizando fracciones comunes, secuencias numéricas y geométricas, y predice la ocurrencia de algunos eventos.",
+                "BAJO": "El estudiante presenta dificultad para describir y resolver situaciones de medición con fracciones comunes, secuencias numéricas y geométricas, y para predecir la ocurrencia de un evento."
+            }
+                }        
+                    },
+    "Grado 4":{
+        "Primer período": {
+            "Pensamiento y sistemas numéricos": {
+                "SUPERIOR": "Identifica claramente, en el contexto de una situación, la necesidad de un cálculo exacto o aproximado y lo razonable de los resultados obtenidos.",
+                "ALTO": "Identifica, en el contexto de una situación, la necesidad de un cálculo exacto o aproximado y lo razonable de los resultados obtenidos.",
+                "BÁSICO": "En ocasiones, identifica, en el contexto de una situación, la necesidad de un cálculo exacto o aproximado y lo razonable de los resultados obtenidos.",
+                "BAJO": "Se le dificulta identificar, en el contexto de una situación, la necesidad de un cálculo exacto o aproximado y lo razonable de los resultados obtenidos."
+            },
+            "Pensamiento espacial y sistema geométrico": {
+                "SUPERIOR": "Identifica, representa y utiliza correctamente rectas paralelas y perpendiculares, ángulos en giros, aberturas, inclinaciones, figuras, puntas y esquinas en situaciones estáticas y dinámicas.",
+                "ALTO": "Identifica, representa y utiliza correctamente rectas paralelas y perpendiculares, ángulos en giros, aberturas e inclinaciones en situaciones estáticas y dinámicas.",
+                "BÁSICO": "Identifica, representa y utiliza rectas paralelas y perpendiculares y ángulos en situaciones estáticas y dinámicas.",
+                "BAJO": "Se le dificulta identificar, representar y utilizar rectas paralelas y perpendiculares en situaciones estáticas y dinámicas."
+            },
+            "Pensamiento métrico y sistema de medidas": {
+                "SUPERIOR": "Utiliza y justifica correctamente el uso de la estimación para resolver problemas relativos a la vida social, económica y de las ciencias, utilizando rangos de medición y magnitudes, el metro, sus múltiplos y submúltiplos.",
+                "ALTO": "Utiliza y justifica el uso de la estimación para resolver problemas relativos a la vida social, económica y de las ciencias, utilizando rangos de medición y magnitudes, el metro, sus múltiplos y submúltiplos.",
+                "BÁSICO": "En algunas ocasiones, utiliza y justifica el uso de la estimación para resolver problemas relativos a la vida social, económica y de las ciencias, utilizando rangos de medición y magnitudes, el metro, sus múltiplos y submúltiplos.",
+                "BAJO": "Se le dificulta utilizar y justificar el uso de la estimación para resolver problemas relativos a la vida social, económica y de las ciencias, utilizando rangos de medición y magnitudes, el metro, sus múltiplos y submúltiplos."
+            },
+            "Pensamiento aleatorio y sistemas de datos": {
+                "SUPERIOR": "Interpreta correctamente información presentada en tablas y gráficas (pictogramas, gráficas de barras, diagramas de líneas y diagramas circulares) relacionadas con la estadística en general.",
+                "ALTO": "Interpreta información presentada en tablas y gráficas (pictogramas, gráficas de barras, diagramas de líneas y diagramas circulares) relacionadas con la estadística en general.",
+                "BÁSICO": "En algunas ocasiones, interpreta información presentada en tablas y gráficas (pictogramas, gráficas de barras, diagramas de líneas y diagramas circulares) relacionadas con la estadística en general.",
+                "BAJO": "Se le dificulta interpretar información presentada en tablas y gráficas (pictogramas, gráficas de barras, diagramas de líneas y diagramas circulares) relacionadas con la estadística en general."
+            },
+            "Pensamiento variacional y sistema algebraico y analítico": {
+                "SUPERIOR": "Representa y relaciona correctamente patrones numéricos con tablas y reglas verbales.",
+                "ALTO": "Representa y relaciona patrones numéricos con tablas y reglas verbales.",
+                "BÁSICO": "En ocasiones, representa y relaciona patrones numéricos con tablas y reglas verbales.",
+                "BAJO": "Se le dificulta representar y relacionar patrones numéricos con tablas y reglas verbales."
+            }
+        },
+        "Segundo período": {
+            "Pensamiento y sistemas numéricos": {
+                "SUPERIOR": "Interpreta correctamente las fracciones en diferentes contextos: situaciones de medición, relaciones, cociente, razones y proporciones.",
+                "ALTO": "Interpreta las fracciones en diferentes contextos: situaciones de medición, relaciones, cociente, razones y proporciones.",
+                "BÁSICO": "Con alguna dificultad, interpreta las fracciones en diferentes contextos: situaciones de medición, relaciones, cociente, razones y proporciones.",
+                "BAJO": "Se le dificulta interpretar las fracciones en diferentes contextos: situaciones de medición, relaciones, cociente, razones y proporciones."
+            },
+            "Pensamiento espacial y sistema geométrico": {
+                "SUPERIOR": "Construye y descompone correctamente figuras a partir de condiciones dadas.",
+                "ALTO": "Construye y descompone figuras a partir de condiciones dadas.",
+                "BÁSICO": "En ocasiones, construye y descompone figuras a partir de condiciones dadas.",
+                "BAJO": "Se le dificulta construir y descomponer figuras a partir de condiciones dadas."
+            },
+            "Pensamiento métrico y sistema de medidas": {
+                "SUPERIOR": "Diferencia y ordena correctamente objetos y eventos, propiedades o atributos que se puedan medir.",
+                "ALTO": "Diferencia y ordena objetos y eventos, propiedades o atributos que se puedan medir.",
+                "BÁSICO": "Con alguna dificultad, diferencia y ordena objetos y eventos, propiedades o atributos que se puedan medir.",
+                "BAJO": "Se le dificulta diferenciar y ordenar objetos y eventos, propiedades o atributos que se puedan medir."
+            },
+            "Pensamiento aleatorio y sistemas de datos": {
+                "SUPERIOR": "Representa con exactitud datos usando tablas y gráficas (pictogramas, gráficas de barras, diagramas de líneas y diagramas circulares).",
+                "ALTO": "Representa datos usando tablas y gráficas (pictogramas, gráficas de barras y diagramas de líneas).",
+                "BÁSICO": "Representa datos usando tablas y gráficas (pictogramas y gráficas de barras).",
+                "BAJO": "Representa datos usando tablas y gráficas (pictogramas)."
+            },
+            "Pensamiento variacional y sistema algebraico y analítico": {
+                "SUPERIOR": "Describe e interpreta correctamente variaciones representadas en gráficos.",
+                "ALTO": "Describe e interpreta variaciones representadas en gráficos.",
+                "BÁSICO": "Describe e interpreta con alguna dificultad variaciones representadas en gráficos.",
+                "BAJO": "Se le dificulta describir e interpretar variaciones representadas en gráficos."
+            }
+        },
+        "Tercer período": {
+            "Pensamiento y sistemas numéricos": {
+                "SUPERIOR": "Utiliza correctamente la notación decimal para expresar fracciones en diferentes contextos y relaciona estas dos notaciones con la de los porcentajes.",
+                "ALTO": "Utiliza la notación decimal para expresar fracciones en diferentes contextos y relaciona estas dos notaciones con la de los porcentajes.",
+                "BÁSICO": "Con alguna dificultad, utiliza la notación decimal para expresar fracciones en diferentes contextos y relaciona estas dos notaciones con la de los porcentajes.",
+                "BAJO": "Se le dificulta utilizar la notación decimal para expresar fracciones en diferentes contextos y relacionar estas dos notaciones con la de los porcentajes."
+            },
+            "Pensamiento espacial y sistema geométrico": {
+                "SUPERIOR": "Construye correctamente objetos tridimensionales a partir de representaciones bidimensionales y puede realizar el proceso contrario en contextos de arte, diseño y argumentación.",
+                "ALTO": "Construye objetos tridimensionales a partir de representaciones bidimensionales y puede realizar el proceso contrario en contextos de arte, diseño y argumentación.",
+                "BÁSICO": "Con alguna dificultad, construye objetos tridimensionales a partir de representaciones bidimensionales y puede realizar el proceso contrario en contextos de arte, diseño y argumentación.",
+                "BAJO": "Se le dificulta construir objetos tridimensionales a partir de representaciones bidimensionales y realizar el proceso contrario en contextos de arte, diseño y argumentación."
+            },
+            "Pensamiento métrico y sistema de medidas": {
+                "SUPERIOR": "Utiliza diferentes procedimientos de cálculo para hallar el área de la superficie exterior y el volumen de algunos cuerpos sólidos.",
+                "ALTO": "Utiliza procedimientos de cálculo para hallar el área de la superficie exterior y el volumen de algunos cuerpos sólidos.",
+                "BÁSICO": "Con alguna dificultad, utiliza diferentes procedimientos de cálculo para hallar el área de la superficie exterior y el volumen de algunos cuerpos sólidos.",
+                "BAJO": "Se le dificulta utilizar diferentes procedimientos de cálculo para hallar el área de la superficie exterior y el volumen de algunos cuerpos sólidos."
+            },
+            "Pensamiento aleatorio y sistemas de datos": {
+                "SUPERIOR": "Usa e interpreta correctamente la media (o promedio) y la mediana, y compara lo que indican.",
+                "ALTO": "Usa e interpreta la media (o promedio) y la mediana, y compara lo que indican.",
+                "BÁSICO": "Con alguna dificultad, usa e interpreta la media (o promedio) y la mediana, y compara lo que indican.",
+                "BAJO": "Se le dificulta usar e interpretar la media (o promedio) y la mediana, y comparar lo que indican."
+            },
+            "Pensamiento variacional y sistema algebraico y analítico": {
+                "SUPERIOR": "Construye correctamente igualdades y desigualdades numéricas como representación de relaciones entre distintos datos.",
+                "ALTO": "Construye igualdades y desigualdades numéricas como representación de relaciones entre distintos datos.",
+                "BÁSICO": "Con alguna dificultad, construye igualdades y desigualdades numéricas como representación de relaciones entre distintos datos.",
+                "BAJO": "Se le dificulta construir igualdades y desigualdades numéricas como representación de relaciones entre distintos datos."
+            }
+        },
+        "Cuarto período": {
+            "Pensamiento y sistemas numéricos": {
+                "SUPERIOR": "Utiliza y justifica correctamente algoritmos estandarizados y no estandarizados para realizar operaciones con representaciones fraccionarias y decimales.",
+                "ALTO": "Utiliza y justifica algoritmos estandarizados y no estandarizados para realizar operaciones con representaciones fraccionarias y decimales.",
+                "BÁSICO": "Pocas veces utiliza y justifica algoritmos estandarizados y no estandarizados para realizar operaciones con representaciones fraccionarias y decimales.",
+                "BAJO": "Difícilmente utiliza y justifica algoritmos estandarizados y no estandarizados para realizar operaciones con representaciones fraccionarias y decimales."
+            },
+            "Pensamiento espacial y sistema geométrico": {
+                "SUPERIOR": "Utiliza correctamente sistemas de coordenadas para especificar localizaciones y describir relaciones espaciales.",
+                "ALTO": "Utiliza sistemas de coordenadas para especificar localizaciones y describir relaciones espaciales.",
+                "BÁSICO": "Con alguna dificultad, utiliza sistemas de coordenadas para especificar localizaciones y describir relaciones espaciales.",
+                "BAJO": "Se le dificulta utilizar sistemas de coordenadas para especificar localizaciones y describir relaciones espaciales."
+            },
+            "Pensamiento métrico y sistema de medidas": {
+                "SUPERIOR": "Selecciona correctamente unidades, tanto convencionales como estandarizadas, apropiadas para diferentes mediciones.",
+                "ALTO": "Selecciona unidades, tanto convencionales como estandarizadas, apropiadas para diferentes mediciones.",
+                "BÁSICO": "Con alguna dificultad, selecciona unidades, tanto convencionales como estandarizadas, apropiadas para diferentes mediciones.",
+                "BAJO": "Con dificultad, selecciona unidades, tanto convencionales como estandarizadas, apropiadas para diferentes mediciones."
+            },
+            "Pensamiento aleatorio y sistemas de datos": {
+                "SUPERIOR": "Resuelve y formula correctamente problemas a partir de un conjunto de datos provenientes de observaciones, consultas o experimentos.",
+                "ALTO": "Resuelve y formula problemas a partir de un conjunto de datos provenientes de observaciones, consultas o experimentos.",
+                "BÁSICO": "Con alguna dificultad, resuelve y formula problemas a partir de un conjunto de datos provenientes de observaciones, consultas o experimentos.",
+                "BAJO": "Se le dificulta resolver y formular problemas a partir de un conjunto de datos provenientes de observaciones, consultas o experimentos."
+            },
+            "Pensamiento variacional y sistema algebraico y analítico": {
+                "SUPERIOR": "Analiza y explica correctamente relaciones de dependencia entre cantidades que varían en el tiempo con cierta regularidad en situaciones económicas, sociales y de las ciencias naturales.",
+                "ALTO": "Analiza y explica relaciones de dependencia entre cantidades que varían en el tiempo con cierta regularidad en situaciones económicas, sociales y de las ciencias naturales.",
+                "BÁSICO": "Con alguna dificultad, analiza y explica relaciones de dependencia entre cantidades que varían en el tiempo con cierta regularidad en situaciones económicas, sociales y de las ciencias naturales.",
+                "BAJO": "Se le dificulta analizar y explicar relaciones de dependencia entre cantidades que varían en el tiempo con cierta regularidad en situaciones económicas, sociales y de las ciencias naturales."
+            }
+                }  
+                   },
+    "Grado 5":{
+        "Primer período": {
+            "Pensamiento numérico variacional": {
+                "SUPERIOR": "Identifica adecuadamente, en el contexto de una situación, la necesidad de un cálculo exacto o aproximado y lo razonable de los resultados obtenidos, teniendo en cuenta las regularidades y propiedades de los números naturales, sus relaciones y operaciones.",
+                "ALTO": "Identifica, en el contexto de una situación, la necesidad de un cálculo exacto o aproximado y lo razonable de los resultados obtenidos, teniendo en cuenta las regularidades y propiedades de los números naturales, sus relaciones y operaciones.",
+                "BÁSICO": "Algunas veces identifica, en el contexto de una situación, la necesidad de un cálculo exacto o aproximado y lo razonable de los resultados obtenidos, teniendo en cuenta las regularidades y propiedades de los números naturales, sus relaciones y operaciones.",
+                "BAJO": "Con dificultad, identifica, en el contexto de una situación, la necesidad de un cálculo exacto o aproximado y lo razonable de los resultados obtenidos, teniendo en cuenta las regularidades y propiedades de los números naturales, sus relaciones y operaciones."
+            },
+            "Pensamiento Espacial Métrico": {
+                "SUPERIOR": "Identifica, representa y utiliza correctamente ángulos, rectas y medidas en giros, aberturas, inclinaciones, figuras, puntas y esquinas en situaciones estáticas y dinámicas.",
+                "ALTO": "Identifica, representa y utiliza ángulos, rectas y medidas en giros, aberturas, inclinaciones, figuras, puntas y esquinas en situaciones estáticas y dinámicas.",
+                "BÁSICO": "En algunas ocasiones, identifica, representa y utiliza ángulos, rectas y medidas en giros, aberturas, inclinaciones, figuras, puntas y esquinas en situaciones estáticas y dinámicas.",
+                "BAJO": "Con dificultad, identifica, representa y utiliza ángulos, rectas y medidas en giros, aberturas, inclinaciones, figuras, puntas y esquinas en situaciones estáticas y dinámicas."
+            },
+            "Pensamiento Aleatorio": {
+                "SUPERIOR": "Interpreta y formula eficazmente preguntas sobre la información presentada en tablas y gráficas (pictogramas, gráficas de barras, diagramas de líneas y diagramas circulares).",
+                "ALTO": "Interpreta la información presentada en tablas y gráficas (pictogramas, gráficas de barras, diagramas de líneas y diagramas circulares).",
+                "BÁSICO": "Presenta algunas dificultades para interpretar y formular preguntas sobre la información presentada en tablas y gráficas (pictogramas, gráficas de barras, diagramas de líneas y diagramas circulares).",
+                "BAJO": "Se le dificulta interpretar y formular preguntas sobre la información presentada en tablas y gráficas (pictogramas, gráficas de barras, diagramas de líneas y diagramas circulares)."
+            }
+        },
+        "Segundo período": {
+            "Pensamiento numérico variacional": {
+                "SUPERIOR": "Reconoce y aplica los criterios de divisibilidad mediante la descomposición en factores primos para realizar ejercicios prácticos sobre notación decimal y expresar fracciones en diferentes contextos.",
+                "ALTO": "Reconoce los criterios de divisibilidad mediante la descomposición en factores primos para realizar ejercicios prácticos sobre notación decimal y expresar fracciones en diferentes contextos.",
+                "BÁSICO": "Con alguna dificultad, reconoce los criterios de divisibilidad mediante la descomposición en factores primos para realizar ejercicios prácticos sobre notación decimal y expresar fracciones en diferentes contextos.",
+                "BAJO": "Presenta dificultad a la hora de reconocer los criterios de divisibilidad mediante la descomposición en factores primos para realizar ejercicios prácticos sobre notación decimal y expresar fracciones en diferentes contextos."
+            },
+            "Pensamiento Espacial Métrico": {
+                "SUPERIOR": "Identifica, compara y clasifica figuras bidimensionales de acuerdo con sus componentes (ángulos y vértices) y características, describiendo y argumentando que la relación entre el perímetro y el área de diferentes figuras cambia cuando se fija una de estas medidas.",
+                "ALTO": "Identifica figuras bidimensionales de acuerdo con sus componentes (ángulos y vértices) y características, describiendo y argumentando que la relación entre el perímetro y el área de diferentes figuras cambia cuando se fija una de estas medidas.",
+                "BÁSICO": "Con alguna dificultad, identifica figuras bidimensionales de acuerdo con sus componentes (ángulos y vértices) y características, describiendo y argumentando que la relación entre el perímetro y el área de diferentes figuras cambia cuando se fija una de estas medidas.",
+                "BAJO": "Presenta dificultad para identificar figuras bidimensionales de acuerdo con sus componentes (ángulos y vértices) y características, describiendo y argumentando que la relación entre el perímetro y el área de diferentes figuras cambia cuando se fija una de estas medidas."
+            },
+            "Pensamiento Aleatorio": {
+                "SUPERIOR": "Interpreta y compara información representada en tablas y gráficas utilizando la media (o promedio) y la mediana, comparando lo que indican del mismo conjunto de datos, y predice patrones de variación en una secuencia numérica, geométrica o gráfica.",
+                "ALTO": "Interpreta información representada en tablas y gráficas utilizando la media (o promedio) y la mediana, comparando lo que indican del mismo conjunto de datos, y predice patrones de variación en una secuencia numérica, geométrica o gráfica.",
+                "BÁSICO": "Con algunas dificultades, interpreta información representada en tablas y gráficas utilizando la media (o promedio) y la mediana, comparando lo que indican del mismo conjunto de datos, y predice patrones de variación en una secuencia numérica, geométrica o gráfica.",
+                "BAJO": "Se le dificulta interpretar y comparar información representada en tablas y gráficas utilizando la media (o promedio) y la mediana, comparando lo que indican del mismo conjunto de datos, y predecir patrones de variación en una secuencia numérica, geométrica o gráfica."
+            }
+        },
+        "Tercer período": {
+            "Pensamiento numérico variacional": {
+                "SUPERIOR": "Reconoce los términos y tipos de fracciones, las representa con facilidad y, en este sentido, puede realizar operaciones con ellas para la resolución de problemas cotidianos.",
+                "ALTO": "Identifica la mayoría de las veces los términos y tipos de fracciones, las representa con facilidad y, en este sentido, puede realizar operaciones con ellas para la resolución de problemas cotidianos.",
+                "BÁSICO": "Usualmente, apropia los términos y tipos de fracciones, las representa con facilidad y, en este sentido, puede realizar operaciones con ellas para la resolución de problemas cotidianos.",
+                "BAJO": "Con dificultad, identifica los términos y tipos de fracciones; se le dificulta representarlas y, en este sentido, realizar operaciones con ellas para la resolución de problemas cotidianos."
+            },
+            "Pensamiento Espacial Métrico": {
+                "SUPERIOR": "Identifica y construye objetos tridimensionales a partir de representaciones bidimensionales y puede realizar el proceso contrario en contextos de arte, diseño y arquitectura, utilizando diferentes procedimientos de cálculo para hallar el área de la superficie exterior y el volumen de algunos cuerpos sólidos.",
+                "ALTO": "Identifica objetos tridimensionales a partir de representaciones bidimensionales y puede realizar el proceso contrario en contextos de arte, diseño y arquitectura, utilizando diferentes procedimientos de cálculo para hallar el área de la superficie exterior y el volumen de algunos cuerpos sólidos.",
+                "BÁSICO": "Con algunas dificultades, identifica objetos tridimensionales a partir de representaciones bidimensionales y puede realizar el proceso contrario en contextos de arte, diseño y arquitectura, utilizando diferentes procedimientos de cálculo para hallar el área de la superficie exterior y el volumen de algunos cuerpos sólidos.",
+                "BAJO": "Se le dificulta identificar objetos tridimensionales a partir de representaciones bidimensionales y realizar el proceso contrario en contextos de arte, diseño y arquitectura; además, se le dificulta utilizar diferentes procedimientos de cálculo para hallar el área de la superficie exterior y el volumen de algunos cuerpos sólidos."
+            },
+            "Pensamiento Aleatorio": {
+                "SUPERIOR": "Utiliza apropiadamente las medidas de tendencia central para resolver problemas en los que se requiere presentar o resumir el comportamiento de un conjunto de datos.",
+                "ALTO": "Utiliza las medidas de tendencia central para resolver problemas en los que se requiere presentar o resumir el comportamiento de un conjunto de datos.",
+                "BÁSICO": "Con algunas dificultades, utiliza las medidas de tendencia central para resolver problemas en los que se requiere presentar o resumir el comportamiento de un conjunto de datos.",
+                "BAJO": "Se le dificulta utilizar las medidas de tendencia central para resolver problemas en los que se requiere presentar o resumir el comportamiento de un conjunto de datos."
+            }
+        },
+        "Cuarto período": {
+            "Pensamiento numérico variacional": {
+                "SUPERIOR": "Con destreza, reconoce los números decimales, su valor posicional, aplica operaciones con fracciones y resuelve problemas en los que emplea decimales, razones y porcentajes con facilidad.",
+                "ALTO": "Aplica formas básicas de representación de números decimales, reconoce su valor posicional, realiza operaciones con fracciones y resuelve problemas en los que emplea decimales, razones y porcentajes con facilidad.",
+                "BÁSICO": "Con algunas dificultades, reconoce los números decimales, su valor posicional, aplica operaciones con fracciones y resuelve problemas en los que emplea decimales, razones y porcentajes.",
+                "BAJO": "Se le dificulta reconocer los números decimales y su valor posicional. También presenta dificultad para calcular porcentajes."
+            },
+            "Pensamiento Espacial Métrico": {
+                "SUPERIOR": "Utiliza correctamente sistemas de coordenadas para especificar localizaciones y describir relaciones espaciales, atendiendo a la conversión de unidades de medida.",
+                "ALTO": "Utiliza sistemas de coordenadas para especificar localizaciones y describir relaciones espaciales, atendiendo a la conversión de unidades de medida.",
+                "BÁSICO": "Con alguna dificultad, utiliza sistemas de coordenadas para especificar localizaciones y describir relaciones espaciales, atendiendo a la conversión de unidades de medida.",
+                "BAJO": "Se le dificulta utilizar sistemas de coordenadas para especificar localizaciones y describir relaciones espaciales, atendiendo a la conversión de unidades de medida."
+            },
+            "Pensamiento Aleatorio": {
+                "SUPERIOR": "Formula y resuelve correctamente situaciones en las que se requiere la solución de ecuaciones a partir de relaciones de un conjunto de datos.",
+                "ALTO": "Formula y resuelve situaciones en las que se requiere la solución de ecuaciones a partir de relaciones de un conjunto de datos.",
+                "BÁSICO": "Con alguna dificultad, formula y resuelve situaciones en las que se requiere la solución de ecuaciones a partir de relaciones de un conjunto de datos.",
+                "BAJO": "Se le dificulta formular y resolver situaciones en las que se requiere la solución de ecuaciones a partir de relaciones de un conjunto de datos."
+             }
+           }        
+          }
         }
-    }

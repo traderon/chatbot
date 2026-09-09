@@ -98,11 +98,11 @@ def index(path):
     #contexto={}
     #preguntas=['Cual/es el/los periodo/s a evaluar','Coloque el nivel obtenido por el estudiante: S(superior), A(Alto), B(Básico), Ba(Bajo)','Cuáles son las barreras actitudinales de la familia','Cuáles son las barreras actitudinales del docente','Cuáles son las barreras curriculares']
     session["preguntas"] = [
-        "Seleccione el grado Grado 1 o Grado 2?",
+        "Seleccione el grado Grado 1,Grado 2,Grado 3,Grado 4 o Grado 5?",
         "Seleccione el período Primer período,Segundo período,Tercer período,Cuarto período?",
         "Seleccione el componente: \n\n"+componente[0]+" \n"+componente[1]+" \n"+componente[2],
         "Seleccione el estándar"+ session.get("grado", ""),
-        "Seleccione el desempeño",
+        "Seleccione la reformulación",
         "Selecciona cuales son las barreras actitudinales de la familia: \n\n"+barreras_familia[0]+" \n"+barreras_familia[1],
         "Selecciona cuales son las barreras actitudinales del docente: \n\n"+barreras_docente[0]+" \n"+barreras_docente[1]+" \n"+barreras_docente[2]+" \n"+barreras_docente[3],
         "Selecciona cuales son las barreras curriculares: \n\n"+barreras_curriculares[0]+" \n"+barreras_curriculares[1]+" \n"+barreras_curriculares[2],
@@ -181,23 +181,43 @@ def chat():
                 session["barreras_fisicas"]=message
                 barreras_fisicas=session.get("barreras_fisicas", "")
         elif len(preguntas)>contador:
-            if pregunta !="" and "Seleccione el grado Grado 1 o Grado 2?" == pregunta:
+            if pregunta !="" and "Seleccione el grado Grado 1,Grado 2,Grado 3,Grado 4 o Grado 5?" == pregunta:
                 if message in "Grado 1" or message in "1" or message in "uno" or message in "grado 1":
                     session["grado"]="Grado 1"
                 elif message in "Grado 2" or message in "2" or message in "dos" or message in "grado 2":
                     session["grado"]="Grado 2"
+                elif message in "Grado 3" or message in "3" or message in "tres" or message in "grado 3":
+                    session["grado"]="Grado 3"
+                elif message in "Grado 4" or message in "4" or message in "cuatro" or message in "grado 4":
+                    session["grado"]="Grado 4"
+                elif message in "Grado 5" or message in "5" or message in "cinco" or message in "grado 5":
+                    session["grado"]="Grado 5"
             elif pregunta !="" and "Seleccione el período Primer período,Segundo período,Tercer período,Cuarto período?" == pregunta:
                 if message in "Primer período" or message in "1" or message in "Primer" or message in "Primero" or message in "primer" or message in "primero":
                     session["periodo"]="Primer período"
                 elif message in "Segundo período" or message in "2" or message in "Segundo" or message in "segundo":
                     session["periodo"]="Segundo período"
+                elif message in "Tercer período" or message in "3" or message in "Tercero" or message in "tercer" or message in "tercero":
+                    session["periodo"]="Tercer período"
+                elif message in "Cuarto período" or message in "4" or message in "Cuarto" or message in "cuarto":
+                    session["periodo"]="Cuarto período"
             elif "Seleccione el componente" in pregunta:
                 if message in "Pensamiento numérico variacional" or message in "numérico" or message in "numerico" or message in "Numerico" or message in "Numérico":
                     session["componente"]="Pensamiento numérico variacional"
                 elif message in "Pensamiento Espacial Métrico" or message in "métrico" or message in "metrico" or message in "Metrico" or message in "Métrico":
                     session["componente"]="Pensamiento Espacial Métrico"
                 elif message in "Pensamiento Aleatorio" or message in "Aleatorio" or message in "aleatorio":
-                    session["componente"]="Pensamiento Aleatorio"    
+                    session["componente"]="Pensamiento Aleatorio"
+                elif message in "Pensamiento y sistemas numéricos" or message in "sistemas numéricos" or message in "numéricos":
+                    session["componente"]="Pensamiento y sistemas numéricos"
+                elif message in "Pensamiento espacial y sistema geométrico" or message in "sistema geométrico" or message in "geométrico":
+                    session["componente"]="Pensamiento espacial y sistema geométrico" 
+                elif message in "Pensamiento métrico y sistema de medidas" or message in "sistema de medidas" or message in "medidas":
+                    session["componente"]="Pensamiento métrico y sistema de medidas"
+                elif message in "Pensamiento aleatorio y sistemas de datos" or message in "sistemas de datos" or message in "datos":
+                    session["componente"]="Pensamiento aleatorio y sistemas de datos"
+                elif message in "Pensamiento variacional y sistema algebraico y analíticos" or message in "sistema algebraico" or message in "algebraico y analíticos":
+                    session["componente"]="Pensamiento variacional y sistema algebraico y analíticos"    
             elif "Seleccione el estándar" in pregunta:
                 session["estandar"]=message    
             elif "Selecciona cuales son las barreras actitudinales de la familia" in pregunta:
@@ -213,6 +233,18 @@ def chat():
             elif "Seleccione el desempeño" in pregunta:
                 session["desempeño"]=message
             pregunta=preguntas[contador]
+            if "Seleccione el componente" in pregunta:
+                if session["grado"]=="Grado 4":
+                    pregunta = "Seleccione el componente:\n\n"
+                    componentes=[
+                        "Pensamiento y sistemas numéricos",
+                        "Pensamiento espacial y sistema geométrico",
+                        "Pensamiento métrico y sistema de medidas",
+                        "Pensamiento aleatorio y sistemas de datos",
+                        "Pensamiento variacional y sistema algebraico y analíticos"
+                        ]
+                    for i, compo in enumerate(componentes, start=1):
+                        pregunta += f"{i}. {compo}\n"
             if "Seleccione el estándar" in pregunta:
                 estandares = Estandar[session["grado"]][session["periodo"]][session["componente"]]
 
@@ -220,15 +252,15 @@ def chat():
                 
                 for i, estandar in enumerate(estandares, start=1):
                     pregunta += f"{i}. {estandar}\n"
-            elif "Seleccione el desempeño" in pregunta:
+            elif "Seleccione la reformulación" in pregunta:
                 if session["grado"]=='Grado 2':
                     desempeños = Desempeño[session["grado"]][session["periodo"]]["Pensamiento numérico variacional"]
                 else:
                     desempeños = Desempeño[session["grado"]][session["periodo"]][session["componente"]]
-                pregunta = "Seleccione el desempeño:\n\n"
+                pregunta = "Seleccione la reformulación:\n\n"
                 
                 for i, (nivel,descripcion) in enumerate(desempeños.items(), start=1):
-                    pregunta += f"{i}. {nivel}:{descripcion}\n"         
+                    pregunta += f"{i}. {descripcion}\n"         
             # Guardar nuevamente en la sesión
             session["preguntas"] = preguntas
             session["contexto"] = contexto
