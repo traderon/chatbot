@@ -9,8 +9,9 @@ from docx.oxml import OxmlElement
 from flask import session
 from flask import send_file
 from io import BytesIO
-from datos import Estandar, Desempeño
-
+from datos import Estandar, Desempeño, Temporalizacion, Ajuste_comunicacion, Metodologia, Recursos, Comunicacion, Tiempo, Espacio, Observaciones
+import re
+import unicodedata
 
 load_dotenv()
 
@@ -82,6 +83,7 @@ def index(path):
         "6. Rampas",
         "7. Transporte o acceso educativo insuficiente"    
         ]
+    
     session["grado"]=""
     session["barreras_familia"]=""
     session["barreras_docente"]=""
@@ -94,25 +96,45 @@ def index(path):
     session["estandar"]=""
     session["desempeño"]=""
     session["contador"]=0
+    
+    session["Temporalizacion"]=""
+    session["Ajuste_comunicacion"]=""
+    session["Metodologia"]=""
+    session["Recursos"]=""
+    session["Comunicacion"]=""
+    session["Tiempo"]=""
+    session["Espacio"]=""
+    session["observaciones"]=""
     #pregunta=""
     #contexto={}
     #preguntas=['Cual/es el/los periodo/s a evaluar','Coloque el nivel obtenido por el estudiante: S(superior), A(Alto), B(Básico), Ba(Bajo)','Cuáles son las barreras actitudinales de la familia','Cuáles son las barreras actitudinales del docente','Cuáles son las barreras curriculares']
     session["preguntas"] = [
         "Seleccione el grado Grado 1,Grado 2,Grado 3,Grado 4 o Grado 5?",
-        "Seleccione el período Primer período,Segundo período,Tercer período,Cuarto período?",
-        "Seleccione el componente: \n\n"+componente[0]+" \n"+componente[1]+" \n"+componente[2],
-        "Seleccione el estándar"+ session.get("grado", ""),
-        "Seleccione la reformulación",
-        "Selecciona cuales son las barreras actitudinales de la familia: \n\n"+barreras_familia[0]+" \n"+barreras_familia[1],
-        "Selecciona cuales son las barreras actitudinales del docente: \n\n"+barreras_docente[0]+" \n"+barreras_docente[1]+" \n"+barreras_docente[2]+" \n"+barreras_docente[3],
-        "Selecciona cuales son las barreras curriculares: \n\n"+barreras_curriculares[0]+" \n"+barreras_curriculares[1]+" \n"+barreras_curriculares[2],
-        "Selecciona cuales son las barreras didacticas: \n\n"+barreras_didacticas[0]+" \n"+barreras_didacticas[1]+" \n"+barreras_didacticas[2]+" \n"+barreras_didacticas[3]+" \n"+barreras_didacticas[4]+" \n"+barreras_didacticas[5]+" \n"+barreras_didacticas[6]+" \n"+barreras_didacticas[7]+" \n"+barreras_didacticas[8]+" \n"+barreras_didacticas[9]+" \n"+barreras_didacticas[10]+" \n"+barreras_didacticas[11],
-        "Selecciona cuales son las barreras comunicativas: \n\n"+barreras_comunicativas[0]+" \n"+barreras_comunicativas[1]+" \n"+barreras_comunicativas[2],
-        "Selecciona cuales son las barreras físicas: \n\n"+barreras_fisicas[0]+" \n"+barreras_fisicas[1]+" \n"+barreras_fisicas[2]+" \n"+barreras_fisicas[3]+" \n"+barreras_fisicas[4]+" \n"+barreras_fisicas[5]+" \n"+barreras_fisicas[6]
-        #"Coloque el nivel obtenido por el estudiante: S(superior), A(Alto), B(Básico), Ba(Bajo)",
-        #"Cuáles son las barreras actitudinales de la familia",
-        #"Cuáles son las barreras actitudinales del docente",
-        #"Cuáles son las barreras curriculares"
+         "Seleccione el período Primer período,Segundo período,Tercer período,Cuarto período?",
+         "Seleccione el componente: \n\n"+componente[0]+" \n"+componente[1]+" \n"+componente[2],
+         "Seleccione el estándar"+ session.get("grado", ""),
+         "Seleccione la reformulación",
+         "Selecciona cuales son las barreras actitudinales de la familia: \n\n"+barreras_familia[0]+" \n"+barreras_familia[1],
+         "Selecciona cuales son las barreras actitudinales del docente: \n\n"+barreras_docente[0]+" \n"+barreras_docente[1]+" \n"+barreras_docente[2]+" \n"+barreras_docente[3],
+         "Selecciona cuales son las barreras curriculares: \n\n"+barreras_curriculares[0]+" \n"+barreras_curriculares[1]+" \n"+barreras_curriculares[2],
+         "Selecciona cuales son las barreras didacticas: \n\n"+barreras_didacticas[0]+" \n"+barreras_didacticas[1]+" \n"+barreras_didacticas[2]+" \n"+barreras_didacticas[3]+" \n"+barreras_didacticas[4]+" \n"+barreras_didacticas[5]+" \n"+barreras_didacticas[6]+" \n"+barreras_didacticas[7]+" \n"+barreras_didacticas[8]+" \n"+barreras_didacticas[9]+" \n"+barreras_didacticas[10]+" \n"+barreras_didacticas[11],
+         "Selecciona cuales son las barreras comunicativas: \n\n"+barreras_comunicativas[0]+" \n"+barreras_comunicativas[1]+" \n"+barreras_comunicativas[2],
+         "Selecciona cuales son las barreras físicas: \n\n"+barreras_fisicas[0]+" \n"+barreras_fisicas[1]+" \n"+barreras_fisicas[2]+" \n"+barreras_fisicas[3]+" \n"+barreras_fisicas[4]+" \n"+barreras_fisicas[5]+" \n"+barreras_fisicas[6],
+         "Selecciona cual es la temporalización",
+         "Selecciona los ajustes en la comunicación",
+         "Selecciona la metodología",
+         "Selecciona recursos",
+        "Selecciona la comunicación",
+        "Selecciona el tiempo",
+        "Selecciona el espacio",
+         "Deseas añadir algunas observaciones? Si/No"
+        #=======================================================================
+        # "Selecciona observaciones"
+        # "Coloque el nivel obtenido por el estudiante: S(superior), A(Alto), B(Básico), Ba(Bajo)",
+        # "Cuáles son las barreras actitudinales de la familia",
+        # "Cuáles son las barreras actitudinales del docente",
+        # "Cuáles son las barreras curriculares"
+        #=======================================================================
     ]
     session["messages"]=[]
     session.modified = True
@@ -136,6 +158,21 @@ def insertar_parrafo_despues(parrafo, texto):
     nuevo_parrafo.add_run(texto)
 
     return nuevo_parrafo
+
+def normalizar_texto(texto):
+    # Convertir a minúsculas y eliminar tildes
+    texto = texto.lower().strip()
+    texto = unicodedata.normalize("NFD", texto)
+    texto = "".join(
+        caracter for caracter in texto
+        if unicodedata.category(caracter) != "Mn"
+    )
+    # Eliminar comas y espacios al inicio y al final
+    texto = texto.strip(" ,")
+    # Eliminar espacios adicionales entre palabras
+    texto = re.sub(r"\s+", " ", texto)
+
+    return texto
 
 @app.route("/chat", methods=["POST"])
 def chat():
@@ -162,7 +199,15 @@ def chat():
     barreras_didacticas=session.get("barreras_didacticas", "")
     barreras_comunicativas=session.get("barreras_comunicativas", "")
     barreras_fisicas=session.get("barreras_fisicas", "")
+    temporalizacion=session.get("Temporalizacion", "")
+    ajuste_comunicacion=session.get("Ajuste_comunicacion", "")
+    metodologia=session.get("Metodologia", "")
+    recursos=session.get("Recursos", "")
+    comunicacion=session.get("Comunicacion", "")
+    tiempo=session.get("Tiempo", "")
+    espacio=session.get("Espacio", "")
     contador=session.get("contador", 0)
+    observaciones=session.get("observaciones", 0)
     print(preguntas)
     print(messages)
     messages.append({"role": "system", "content": "Eres un asistente educativo experto en ajustes razonables en matemáticas."})
@@ -175,49 +220,124 @@ def chat():
     if len(preguntas)>=contador and any("Iniciar generación del ajuste razonable" in msg["content"] for msg in messages):
         #messages.append({"role": "user", "content": message})
         if len(preguntas)==contador:
-            session["contador"] += 1
-            contador=session.get("contador", 0)
-            if "Selecciona cuales son las barreras físicas" in pregunta:
-                session["barreras_fisicas"]=message
-                barreras_fisicas=session.get("barreras_fisicas", "")
-        elif len(preguntas)>contador:
+            if "Deseas añadir algunas observaciones" in pregunta:
+                respuesta=normalizar_texto(message)
+                session["observaciones"]=respuesta   
+                observaciones=session.get("observaciones", 0)
+                if session.get("observaciones", 0)=="si":    
+                    preguntas.append("Selecciona observaciones")
+                else:
+                    session["contador"] += 1
+                    contador=session.get("contador", 0)
+           
+            if "Selecciona observaciones" in pregunta:
+                session["observaciones"]=message    
+                observaciones=session.get("observaciones", 0) 
+                session["contador"] += 1
+                contador=session.get("contador", 0)
+        if len(preguntas)>contador:
             if pregunta !="" and "Seleccione el grado Grado 1,Grado 2,Grado 3,Grado 4 o Grado 5?" == pregunta:
-                if message in "Grado 1" or message in "1" or message in "uno" or message in "grado 1":
-                    session["grado"]="Grado 1"
-                elif message in "Grado 2" or message in "2" or message in "dos" or message in "grado 2":
-                    session["grado"]="Grado 2"
-                elif message in "Grado 3" or message in "3" or message in "tres" or message in "grado 3":
-                    session["grado"]="Grado 3"
-                elif message in "Grado 4" or message in "4" or message in "cuatro" or message in "grado 4":
-                    session["grado"]="Grado 4"
-                elif message in "Grado 5" or message in "5" or message in "cinco" or message in "grado 5":
-                    session["grado"]="Grado 5"
+                respuesta = normalizar_texto(message)
+                grados = {
+                    "grado 1": ["1", "uno", "primer grado", "grado uno"],
+                    "grado 2": ["2", "dos", "segundo grado", "grado dos"],
+                    "grado 3": ["3", "tres", "tercer grado", "grado tres"],
+                    "grado 4": ["4", "cuatro", "cuarto grado", "grado cuatro"],
+                    "grado 5": ["5", "cinco", "quinto grado", "grado cinco"]
+                }
+                for grado, sinonimos in grados.items():
+                    opciones = [grado] + sinonimos
+            
+                    if respuesta in opciones:
+                        session["grado"] = grado.title()
+                        break
+                else:
+                    session["grado"] = None
+                    # Aquí puedes indicar que la respuesta no es válida
             elif pregunta !="" and "Seleccione el período Primer período,Segundo período,Tercer período,Cuarto período?" == pregunta:
-                if message in "Primer período" or message in "1" or message in "Primer" or message in "Primero" or message in "primer" or message in "primero":
-                    session["periodo"]="Primer período"
-                elif message in "Segundo período" or message in "2" or message in "Segundo" or message in "segundo":
-                    session["periodo"]="Segundo período"
-                elif message in "Tercer período" or message in "3" or message in "Tercero" or message in "tercer" or message in "tercero":
-                    session["periodo"]="Tercer período"
-                elif message in "Cuarto período" or message in "4" or message in "Cuarto" or message in "cuarto":
-                    session["periodo"]="Cuarto período"
+                respuesta = normalizar_texto(message)
+                periodos = {
+                    "Primer período": [
+                        "1", "primer", "primero", "primer periodo",
+                        "primero periodo", "periodo 1", "periodo uno"
+                    ],
+                    "Segundo período": [
+                        "2", "segundo", "segundo periodo",
+                        "periodo 2", "periodo dos"
+                    ],
+                    "Tercer período": [
+                        "3", "tercer", "tercero", "tercer periodo",
+                        "periodo 3", "periodo tres"
+                    ],
+                    "Cuarto período": [
+                        "4", "cuarto", "cuarto periodo",
+                        "periodo 4", "periodo cuatro"
+                    ]
+                }
+            
+                for periodo, sinonimos in periodos.items():
+                    opciones = [
+                        normalizar_texto(periodo)
+                    ] + [normalizar_texto(s) for s in sinonimos]
+            
+                    if respuesta in opciones:
+                        session["periodo"] = periodo
+                        break
+                else:
+                    session["periodo"] = None
+                    # Aquí puedes indicar que la respuesta no es válida
             elif "Seleccione el componente" in pregunta:
-                if message in "Pensamiento numérico variacional" or message in "numérico" or message in "numerico" or message in "Numerico" or message in "Numérico":
-                    session["componente"]="Pensamiento numérico variacional"
-                elif message in "Pensamiento Espacial Métrico" or message in "métrico" or message in "metrico" or message in "Metrico" or message in "Métrico":
-                    session["componente"]="Pensamiento Espacial Métrico"
-                elif message in "Pensamiento Aleatorio" or message in "Aleatorio" or message in "aleatorio":
-                    session["componente"]="Pensamiento Aleatorio"
-                elif message in "Pensamiento y sistemas numéricos" or message in "sistemas numéricos" or message in "numéricos":
-                    session["componente"]="Pensamiento y sistemas numéricos"
-                elif message in "Pensamiento espacial y sistema geométrico" or message in "sistema geométrico" or message in "geométrico":
-                    session["componente"]="Pensamiento espacial y sistema geométrico" 
-                elif message in "Pensamiento métrico y sistema de medidas" or message in "sistema de medidas" or message in "medidas":
-                    session["componente"]="Pensamiento métrico y sistema de medidas"
-                elif message in "Pensamiento aleatorio y sistemas de datos" or message in "sistemas de datos" or message in "datos":
-                    session["componente"]="Pensamiento aleatorio y sistemas de datos"
-                elif message in "Pensamiento variacional y sistema algebraico y analíticos" or message in "sistema algebraico" or message in "algebraico y analíticos":
-                    session["componente"]="Pensamiento variacional y sistema algebraico y analíticos"    
+                respuesta = normalizar_texto(message)
+                
+                componentes = {
+                    "Pensamiento numérico variacional": [
+                        "numerico", "numerica", "numerico variacional",
+                        "pensamiento numerico", "pensamiento numerico variacional"
+                    ],
+                    "Pensamiento Espacial Métrico": [
+                        "metrico", "espacial", "espacial metrico",
+                        "pensamiento espacial metrico", "pensamiento metrico"
+                    ],
+                    "Pensamiento Aleatorio": [
+                        "aleatorio", "aleatoria", "pensamiento aleatorio"
+                    ],
+                    "Pensamiento y sistemas numéricos": [
+                        "sistemas numericos", "sistema numerico",
+                        "pensamiento y sistemas numericos"
+                    ],
+                    "Pensamiento espacial y sistema geométrico": [
+                        "geometrico", "geometrica", "sistema geometrico",
+                        "sistema geometrico", "pensamiento espacial",
+                        "pensamiento espacial y sistema geometrico"
+                    ],
+                    "Pensamiento métrico y sistema de medidas": [
+                        "medidas", "sistema de medidas", "pensamiento metrico",
+                        "pensamiento metrico y sistema de medidas"
+                    ],
+                    "Pensamiento aleatorio y sistemas de datos": [
+                        "datos", "sistemas de datos", "sistema de datos",
+                        "pensamiento aleatorio y sistemas de datos"
+                    ],
+                    "Pensamiento variacional y sistema algebraico y analíticos": [
+                        "algebraico", "sistema algebraico","analiticos","analitico",
+                        "algebraico y analiticos", "sistema algebraico y analiticos",
+                        "pensamiento variacional",
+                        "pensamiento variacional y sistema algebraico y analiticos"
+                    ]
+                }
+                
+                for componente, sinonimos in componentes.items():
+                    opciones = [
+                        normalizar_texto(componente)
+                    ] + [normalizar_texto(s) for s in sinonimos]
+                
+                    if respuesta in opciones:
+                        session["componente"] = componente
+                        break
+                else:
+                    session["componente"] = None
+                    # Aquí puedes indicar que la respuesta no es válida
+
             elif "Seleccione el estándar" in pregunta:
                 session["estandar"]=message    
             elif "Selecciona cuales son las barreras actitudinales de la familia" in pregunta:
@@ -230,9 +350,66 @@ def chat():
                 session["barreras_didacticas"]=message
             elif "Selecciona cuales son las barreras comunicativas" in pregunta:
                 session["barreras_comunicativas"]=message
+            elif "Selecciona cuales son las barreras físicas" in pregunta:
+                session["barreras_fisicas"]=message
             elif "Seleccione el desempeño" in pregunta:
                 session["desempeño"]=message
-            pregunta=preguntas[contador]
+            elif "Selecciona cual es la temporalización" in pregunta:
+                session["Temporalizacion"]=message
+            elif "Selecciona los ajustes en la comunicación" in pregunta:
+                session["Ajuste_comunicacion"]=message
+            elif "Selecciona la metodología" in pregunta:
+                session["Metodologia"]=message
+            elif "Selecciona recursos" in pregunta:
+                session["Recursos"]=message
+            elif "Selecciona la comunicación" in pregunta:
+                session["Comunicacion"]=message
+            elif "Selecciona el tiempo" in pregunta:
+                session["Tiempo"]=message
+            elif "Seleccione la reformulación" in pregunta:
+                session["desempeño"]=message
+            elif "Deseas añadir algunas observaciones" in pregunta:
+                respuesta=normalizar_texto(message)
+                session["observaciones"]=respuesta
+            elif "Selecciona el espacio" in pregunta:
+                session["Espacio"]=message
+                #espacio=session.get("Espacio", "")
+            pregunta=preguntas[contador]   
+            if "Selecciona observaciones" in pregunta:
+                if session.get("observaciones", 0)=="si":
+                    pregunta = "Selecciona observaciones:\n\n" 
+                    for i, obs in enumerate(Observaciones, start=1):
+                        pregunta += f"{obs}\n"
+                else:
+                    pregunta="Gracias por sus respuestas"
+            if "Selecciona el espacio" in pregunta:
+                pregunta = "Selecciona el espacio:\n\n"
+                for i, esp in enumerate(Espacio, start=1):
+                    pregunta += f"{esp}\n"
+            if "Selecciona el tiempo" in pregunta:
+                pregunta = "Selecciona el tiempo:\n\n"
+                for i, tim in enumerate(Tiempo, start=1):
+                    pregunta += f"{tim}\n"
+            if "Selecciona la comunicación" in pregunta:
+                pregunta = "Selecciona la comunicación:\n\n"
+                for i, com in enumerate(Comunicacion, start=1):
+                    pregunta += f"{com}\n"
+            if "Selecciona recursos" in pregunta:
+                pregunta = "Selecciona recursos:\n\n"
+                for i, recurso in enumerate(Recursos, start=1):
+                    pregunta += f"{recurso}\n"
+            if  "Selecciona la metodología" in pregunta:
+                pregunta = "Selecciona la metodología:\n\n"
+                for i, meto in enumerate(Metodologia, start=1):
+                    pregunta += f"{meto}\n"
+            if "Selecciona los ajustes en la comunicación" in pregunta:
+                pregunta = "Selecciona los ajustes en la comunicación:\n\n"
+                for i, ajuste in enumerate(Ajuste_comunicacion, start=1):
+                    pregunta += f"{ajuste}\n"
+            if "Selecciona cual es la temporalización" in pregunta:
+                pregunta = "Selecciona cual es la temporalización:\n\n"
+                for i, temp in enumerate(Temporalizacion, start=1):
+                    pregunta += f"{temp}\n"
             if "Seleccione el componente" in pregunta:
                 if session["grado"]=="Grado 4":
                     pregunta = "Seleccione el componente:\n\n"
@@ -280,25 +457,42 @@ def chat():
             contexto[pregunta]=message
         print(contexto)
         #documento = Document()
-        doc = Document("PIAR.docx")
-        
-        for numeroCelda in range(1,4):
-            celda = doc.tables[0].cell(1, numeroCelda)
-            
+        try:
+            #doc = Document("PIAR.docx")
+            ruta = os.path.join(os.path.dirname(os.path.abspath(__file__)), "PIAR.docx")
+            doc = Document(ruta)
+        except Exception as e:
+            print(e)
+        lista_periodos=['PRIMER PERIODO','SEGUNDO PERIODO','TERCER PERIODO','CUARTO PERIODO']
+        for numeroCelda in range(1,5):
+            if periodo=="Primer período":
+                celda = doc.tables[0].cell(1, numeroCelda)
+            elif periodo=="Segundo período":
+                celda = doc.tables[0].cell(2, numeroCelda)
+            elif periodo=="Tercer período":
+                celda = doc.tables[0].cell(3, numeroCelda)
+            elif periodo=="Cuarto período":
+                celda = doc.tables[0].cell(4, numeroCelda)
             for i, p in enumerate(celda.paragraphs):
                 print(i, p.text)
-                if p.text.strip() == "PRIMER PERIODO" and numeroCelda==1:
+                if p.text.strip() in lista_periodos and numeroCelda==1:
                     insertar_parrafo_despues(
                         p,
                         periodo+"\n\n"+componente+"\n\n"+estandar
                     )
-                    break
+                    
                 if p.text.strip() == "Reformulación:" and numeroCelda==3:
                     insertar_parrafo_despues(
                         p,
                         desempeño
                     )
-                    break
+                    
+                if p.text.strip() == "Priorización:" and numeroCelda==3:
+                    insertar_parrafo_despues(
+                        p,
+                        componente
+                    )
+                    
                 if p.text.strip() == "FAMILIA:" and numeroCelda==2:
                     insertar_parrafo_despues(
                         p,
@@ -333,8 +527,47 @@ def chat():
                     insertar_parrafo_despues(
                         p,
                         barreras_fisicas
+                    )
+                if p.text.strip() == "Temporalización:" and numeroCelda==3:
+                    insertar_parrafo_despues(
+                        p,
+                        temporalizacion
+                    )  
+                if p.text.strip() == "Ajuste en Comunicación:" and numeroCelda==3:
+                    insertar_parrafo_despues(
+                        p,
+                        ajuste_comunicacion
+                    )
+                if p.text.strip() == "Metodología:" and numeroCelda==3:
+                    insertar_parrafo_despues(
+                        p,
+                        metodologia
+                    )
+                if p.text.strip() == "Recursos:" and numeroCelda==3:
+                    insertar_parrafo_despues(
+                        p,
+                        recursos
                     ) 
-                           
+                if p.text.strip() == "Comunicación:" and numeroCelda==3:
+                    insertar_parrafo_despues(
+                        p,
+                        comunicacion
+                    )
+                if p.text.strip() == "Tiempo:" and numeroCelda==3:
+                    insertar_parrafo_despues(
+                        p,
+                        tiempo
+                    )
+                if p.text.strip() == "Espacio:" and numeroCelda==3:
+                    insertar_parrafo_despues(
+                        p,
+                        espacio
+                    )
+                if p.text.strip() == "OBSERVACIONES" and numeroCelda==4:
+                    insertar_parrafo_despues(
+                        p,
+                        observaciones
+                    )                                    
         doc.save("resultado.docx")
         # Crear tabla de 2 columnas
         #tabla = documento.add_table(rows=1, cols=3)
