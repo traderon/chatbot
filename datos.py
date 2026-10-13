@@ -598,7 +598,7 @@ Desempeño= {
                 "BÁSICO": "En algunas ocasiones, interpreta información presentada en tablas y gráficas (pictogramas, gráficas de barras, diagramas de líneas y diagramas circulares) relacionadas con la estadística en general.",
                 "BAJO": "Se le dificulta interpretar información presentada en tablas y gráficas (pictogramas, gráficas de barras, diagramas de líneas y diagramas circulares) relacionadas con la estadística en general."
             },
-            "Pensamiento variacional y sistema algebraico y analítico": {
+            "Pensamiento variacional y sistema algebraico y analíticos": {
                 "SUPERIOR": "Representa y relaciona correctamente patrones numéricos con tablas y reglas verbales.",
                 "ALTO": "Representa y relaciona patrones numéricos con tablas y reglas verbales.",
                 "BÁSICO": "En ocasiones, representa y relaciona patrones numéricos con tablas y reglas verbales.",
@@ -630,7 +630,7 @@ Desempeño= {
                 "BÁSICO": "Representa datos usando tablas y gráficas (pictogramas y gráficas de barras).",
                 "BAJO": "Representa datos usando tablas y gráficas (pictogramas)."
             },
-            "Pensamiento variacional y sistema algebraico y analítico": {
+            "Pensamiento variacional y sistema algebraico y analíticos": {
                 "SUPERIOR": "Describe e interpreta correctamente variaciones representadas en gráficos.",
                 "ALTO": "Describe e interpreta variaciones representadas en gráficos.",
                 "BÁSICO": "Describe e interpreta con alguna dificultad variaciones representadas en gráficos.",
@@ -662,7 +662,7 @@ Desempeño= {
                 "BÁSICO": "Con alguna dificultad, usa e interpreta la media (o promedio) y la mediana, y compara lo que indican.",
                 "BAJO": "Se le dificulta usar e interpretar la media (o promedio) y la mediana, y comparar lo que indican."
             },
-            "Pensamiento variacional y sistema algebraico y analítico": {
+            "Pensamiento variacional y sistema algebraico y analíticos": {
                 "SUPERIOR": "Construye correctamente igualdades y desigualdades numéricas como representación de relaciones entre distintos datos.",
                 "ALTO": "Construye igualdades y desigualdades numéricas como representación de relaciones entre distintos datos.",
                 "BÁSICO": "Con alguna dificultad, construye igualdades y desigualdades numéricas como representación de relaciones entre distintos datos.",
@@ -694,7 +694,7 @@ Desempeño= {
                 "BÁSICO": "Con alguna dificultad, resuelve y formula problemas a partir de un conjunto de datos provenientes de observaciones, consultas o experimentos.",
                 "BAJO": "Se le dificulta resolver y formular problemas a partir de un conjunto de datos provenientes de observaciones, consultas o experimentos."
             },
-            "Pensamiento variacional y sistema algebraico y analítico": {
+            "Pensamiento variacional y sistema algebraico y analíticos": {
                 "SUPERIOR": "Analiza y explica correctamente relaciones de dependencia entre cantidades que varían en el tiempo con cierta regularidad en situaciones económicas, sociales y de las ciencias naturales.",
                 "ALTO": "Analiza y explica relaciones de dependencia entre cantidades que varían en el tiempo con cierta regularidad en situaciones económicas, sociales y de las ciencias naturales.",
                 "BÁSICO": "Con alguna dificultad, analiza y explica relaciones de dependencia entre cantidades que varían en el tiempo con cierta regularidad en situaciones económicas, sociales y de las ciencias naturales.",
@@ -785,3 +785,79 @@ Desempeño= {
            }        
           }
         }
+
+
+Temporalizacion = [
+    "1. Se requiere de un periodo académico para lograr el desarrollo de los ajustes razonables",
+    "2. Se requiere de un semestre académico para lograr el desarrollo de los ajustes razonables",
+    "3. Se requiere de un año escolar para lograr el desarrollo de los ajustes razonables",
+    "4. Flexibilización jornada escolar"
+        ]
+Ajuste_comunicacion = [
+        "1. Tablero de Comunicación (herramienta visual a través de símbolos o ilustraciones)",
+        "2. Imágenes, secuencias paso a paso, agendas visuales, infografías",
+        "3. Uso de gestos, movimientos, expresiones faciales para complementar la información verbal",
+        "4. Presentación anticipada de actividades con horarios o pictogramas",
+        "5. Uso de Guías macrotipos (grande, claras y legibles)",
+        "6. Descripción verbal de objetos con vocabulario claro y preciso",
+        "7. Manejo de Alto relieve (refuerza motricidad fina, estimulación sensorial)"
+    ]
+Metodologia = [
+        "1. Dividir las tareas amplias en pasos concretos comenzando por tareas fáciles y cortas aumentando la complejidad dependiendo de la ejecución y el progreso",
+        "2. Evaluaciones orales, escritas, graficas o en representación de material concreto, Actividades y trabajos en clase, presentación de cuadernos y talleres al día",
+        "3. Hacer uso de trabajo colaborativo con sus compañeros de salón.",
+        "4. Implementar el diseño universal para el aprendizaje escolar en la planeación de aula ajustada a la temática de la clase.",
+        "5. Iniciar y propiciar los diálogos con contextos conocidos, apoyandose en objetos u materiales.",
+        "6. Fomentar actividades cortas que favorezcan el aprendizaje de conceptos y contenidos.",
+        "7. Permitir trabajo colaborativo o exploratorio de situaciones reales que se puedan ver en la cotidianidad y medio natural.",
+        "8. Relacionar imagen concepto y acompañar con movimientos corporales",
+        "9. Trabajar permanentemente; darle oportunidad de resolver situaciones; no anticipar ni responder en su lugar.",
+        "10. Emplear metodologías activas como proyecto de aula, clase invertida, gamificación.",
+        "11. Narración Aumentada (sonidos, imagenes uso TIC en cuentos o explicar conceptos)",
+        "12. Rutinas Estructuradas (presentaciones anticipadas actividades, horarios, pictogramas)",
+        "13. Tareas con diferentes niveles de complejidad",
+        "14. Trabajo grupal en diferentes escenarios",
+        "15. Fomentar actividades grupales con otros compañeros, para que compartan ideas y resuelvan problemas en conjunto.",
+        "16. Permitir diferentes formas de responder (oral, dibujo, pictograma, dramatización etc).",
+        "17. Utilizar ejemplos de la vida cotidiana para contextualizar los contenidos.",
+        "18. Adaptar la extensión o complejidad de las tareas.",
+    ]
+Recursos = [
+        "1. Diseño de evaluaciones con apoyo de imagenes.",
+        "2. Apoyarse en gráficos y videos para apoyar la comprensión de la información.",
+        "3. Emplear guías de trabajo para la enseñanza de la lengua escrita, se deben tener en cuenta ejemplo: (imagen- palabras)",
+        "4. Emplear herramientas tiflotecnólogicas (lupa, pantalla zoom, celular, computadores, lectores de pantalla etc)",
+        "5. Hacer uso de las herramientas visuales (láminas, carteleras, flujogramas, mapas mentales, buscando promover la estructuración y organización de sus acciones y actividades.",
+        "6. Hacer uso de pictogramas que indiquen el paso a paso de las instrucciones y las actividades",
+        "7. Se requiere apoyo audiovisual y de trabajo manual para adquirir los conocimientos impartidos.",
+        "8. Utilizar sistemas de comunicación aumentativa y alternativa para facilitar el aprendizaje de la estudiante.",
+        "9. Elaborar gráficas utilizando distintos materiales para la simbologia",
+        "10. Utilizar material didáctico de acuerdo con el estilo y ritmo de aprendizaje.",
+        "11. Utilizar sistemas de comunicación aumentativa.",
+        "12. Emplear guías de trabajo para la enseñanza de la lengua escrita, de acuerdo al vocabulario que manejen los estudiantes sordos de cada grado, se deben tener en cuenta ejemplo: (imagen- palabras- señan)",
+        "13. Emplear infografías sencillas que integren texto e imagen para facilitar la comprensión.",
+        "14. Apoyarse en videos cortos o animaciones que expliquen conceptos abstractos.",
+        "15. Utilizar materiales con los intereses del estudiante (personajes, colores, temas).",
+    ]
+Comunicacion = [
+        "1. Dar instrucciones cortas, de forma clara. Precisa y concisa",
+        "2. Verificar si la información dada por el docente, ha sido comprendida",
+        "3. Emplear un lenguaje de acuerdo a las caracterisitcas del estudiante",
+    ]
+Tiempo = [
+        "1. Flexibizar la cantidad de actividades en las guias de trabajo",
+        "2. Establecer actividades en las evaluaciones de acuerdo al estilo y ritmo de aprendizaje del estudiante",
+        "3. Permitir mayor tiempo para ejecución de actividades según su ritmo de aprendizaje",
+    ]
+Espacio = [
+        "1. Organización del aula de clase teniendo en cuenta las caracteristicas del estudiante",
+        "2. Ubicación del estudiante en el aula de clase con relación a los compañeros",
+        "3. Desarrollo de actividades minimizando la contaminación visual y auditiva",
+        "4. Ubicar al estudiante cerca al tablero o al docente para evitar distracciones",
+    ]
+Observaciones = [
+    "1. Logro alcanzado: El estudiante alcanzó los objetivos propuestos en el PIAR para el área de Matemáticas, evidenciando avances en los aprendizajes esperados mediante los ajustes razonables establecidos. Logra desarrollar las actividades propuestas con los apoyos definidos y demuestra comprensión de los conceptos trabajados de acuerdo con sus posibilidades y ritmo de aprendizaje.",
+    "2. Logro alcanzado con apoyos: El estudiante alcanzó los objetivos de aprendizaje priorizados, haciendo uso de los ajustes razonables y apoyos pedagógicos establecidos en el PIAR. Evidencia avances significativos en el desarrollo de las competencias matemáticas y logra aplicar los aprendizajes trabajados en situaciones propuestas, requiriendo apoyo ocasional para fortalecer su desempeño.",
+    "3. No alcanzó los objetivos: El estudiante no alcanzó en su totalidad los objetivos propuestos en el PIAR para el área de Matemáticas durante el periodo evaluado. Si bien evidencia algunos avances en los aprendizajes priorizados, requiere continuar fortaleciendo las habilidades trabajadas mediante los ajustes razonables y apoyos pedagógicos establecidos.",
+    "4. En proceso de alcanzar los objetivos: El estudiante se encuentra en proceso de alcanzar los objetivos priorizados en el PIAR para el área de Matemáticas. Evidencia avances parciales en los aprendizajes trabajados; sin embargo, requiere mantener los ajustes razonables, acompañamiento pedagógico y oportunidades adicionales de práctica para consolidar las competencias propuestas.",
+]
